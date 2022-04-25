@@ -4,11 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>오민혁 포트폴리오</title>
+    <meta name="description" content="오민혁 포트폴리오">
+    <meta name="keywords" content="포트폴리오,웹포트폴리오,웹퍼블리셔,웹개발자">  
+    <title>Oh's PortFolio</title>
     <link rel="stylesheet" href="./css/reset.css">
     <style>
-        /* 구글폰트 */
+        /* 폰트 */
         @import url('https://fonts.googleapis.com/css2?family=Ms+Madi&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Tapestry&display=swap');        /* 기본 스타일 */
+        @font-face {
+            font-family: 'NEXON Lv1 Gothic OTF Bold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Bold.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
         :root{
             color: rgb(133,133,133);
             font-family: 'Noto Sans KR', sans-serif;
@@ -20,6 +28,9 @@
         .right{
             right: 0;
             float: right;
+        }
+        .margint{
+            margin-top: 50px;
         }
         .wrap{
             margin: 0 auto;
@@ -50,7 +61,9 @@
         }
         video{
             width: 100%;
-            filter: grayscale(0.5);
+            height: 100%;
+            transition: 0.3s;
+            filter: brightness(0.7);
             transform: translateY(-20%) scale(1.5);
         }
         /* 폰트클래스 */
@@ -59,7 +72,7 @@
             font-weight: 700;
             font-size: 1.3em;
             text-shadow: 1px 1px 2px #000;
-            letter-spacing: 0.4em;
+            letter-spacing: 0.2em;
         }
         .fosank{
             font-family: 'Noto Sans KR', sans-serif;
@@ -71,11 +84,17 @@
             text-shadow: 1px 1px 2px #000;
             letter-spacing: 0.4em;
         }
+        .fonexo{
+            font-family:'NEXON Lv1 Gothic OTF Bold',sans-serif;
+        }
         /* 헤더 스타일 */
         .header {
+            z-index: 1000;
+            position: fixed;
             top: 0;
             width: 100%;
             height: 90px;
+            transition: 0.5s;
             background-image: url(data:image/png;base64,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);
             background-color: #ffffff;
         }
@@ -110,25 +129,32 @@
         .slidebox{
             position: relative;
             width:100%;
-            height: 30em;
+            height: 40em;
+            margin-top: 40px;
             background-color: rgb(133,133,133);
             overflow: hidden;
         }
         .slide{
             position: absolute;
-            display: none;
             width: 100%;
             height: 100%;
             left: 50%;
             top: 50%;
             z-index: -1;
             opacity: 0;
-            transition: 0.3s;
+            transition: 1s;
             transform: translate(-50%,-50%);
-            background-color: aqua;
+        }
+        .slide img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            filter: grayscale(0.7);
+            transform: translate(-50%,-50%);
         }
         .active{
-            display: block;
             opacity: 1;
             z-index: 50;
         }
@@ -138,10 +164,11 @@
             position: absolute;
             width: 2%;
             cursor: pointer;
-            opacity: 0.3;
+            opacity: 0.6;
             transition: 0.3s;
             border: 4px solid #000;
             border-radius: 50%;
+            background-color: rgba(255,255,255,1);
         }
         .left_btn:hover,.right_btn:hover{
             opacity: 1;
@@ -165,17 +192,52 @@
             text-align: center;
             justify-content: center;
             color: #fff;
-            transition: 0.3s;
+            transition: 1s;
             transform: translate(-50%,-50%);
             background-color: rgba(133,133,133,0.2);
         }
         .sli_tit:hover{
             background-color: rgba(133,133,133,0.0);
         }
+        .sli_h1{
+            font-size: 3em;
+            text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
+        }
         .sli_text{
             margin-top: 1.2em;
-            font-size: 2em;
-            font-weight: 700;
+            font-size: 2.5em;
+            font-weight: 400;
+            text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
+        }
+        /* 섹션1(프로필) 스타일 */
+        .section01{
+            display: flex;
+            width: 100%;
+            height: 520px;
+            background-color: #000;
+        }
+        .section01 .container{
+            display: flex;
+            width: 80%;
+            margin: 90px auto;
+        }
+        .profile{
+            width: 50%;
+            color: #fff;
+            font-size: 24px;
+        }
+        .profile p{
+            margin: 50px 0 100px 0;
+            color: rgb(133,133,133);
+        }
+        .profade{
+            opacity: 0;
+            transition: 1.0s;
+        }
+        /* 섹션2(포트폴리오) 스타일 */
+        .section02{
+            width: 100%;
+            height: 460px;
         }
     </style>
 </head>
@@ -196,33 +258,36 @@
             </div>
             <div class="nav">
                 <ul class="right">
-                    <li><a href="#">VIDEO</a></li>
-                    <li><a href="#">NARRATIVE</a></li>
-                    <li><a href="#">PORTFOLIO</a></li>
-                    <li><a href="#">THANKS TO VISIT</a></li>
+                    <li><a href="#video">VIDEO</a></li>
+                    <li><a href="#section01">NARRATIVE</a></li>
+                    <li><a href="#section02">PORTFOLIO</a></li>
+                    <li><a href="#section03">THANKS TO VISIT</a></li>
                 </ul>
             </div>
         </div>
-        <div class="slidebox">
+        <div class="slidebox" id="video">
             <div class="left_btn" onclick="sliprev()"><img src="./image/Next.svg" alt="이전"></div>
             <div class="slide slide01 active">
                 <a href="href" class="video">
                     <video autoplay loop muted preload="auto">
                         <source src="./video/freevideo_sea.mp4" type="video/mp4">
-                        video출력불가
+                        파도영상(보고싶으시면 브라우저 설정에서 허용해주세요!)
                       </video>
                     <div class="sli_tit">
-                        <h1 class="fotape">Welcome!</h1>
-                        <p class="sli_text fotape">안녕하세요!</p>
+                        <h1 class="sli_h1 fotape">Welcome!</h1>
+                        <p class="sli_text fonexo">안녕하세요!</p>
                     </div>
                 </a>
             </div>
             <div class="slide slide02">
-                <a href="href" class="video">
-                    <img src="" alt="동영상이미지" class="videoimg">
+                <a href="#" class="video" onClick='HardWork()'>
+                    <img src="./image/HardWorking.jpg" alt="근무할때 사진" class="videoimg">
                     <div class="sli_tit">
-                        <h1 class="fotape">140시간 근무 생존</h1>
-                        <p class="sli_text fotape">주 140시간 근무 생존 경험있음</p>
+                        <h1 class="sli_h1 fonexo">주 140시간 근무 생존 경험有</h1>
+                        <p class="sli_text fonexo">자세한 내용이 궁금하면 눌러보세요!</p>
+                    </div>
+                    <div class="hardwork popup">
+
                     </div>
                 </a>
             </div>
@@ -230,18 +295,81 @@
                 <a href="href" class="video">
                     <img src="" alt="동영상이미지" class="videoimg">
                     <div class="sli_tit">
-                        <h1 class="fotape">MY WORKING</h1>
-                        <p class="sli_text fotape">Check My Work </p>
+                        <h1 class="sli_h1 fotape">MY WORKING</h1>
+                        <p class="sli_text fonexo">Check My Work </p>
                     </div>
                 </a>
             </div>
             <div class="right_btn" onclick="slinext()"><img src="./image/Next.svg" alt="다음"></div>
+        </div>
+        <div class="section01" id="section01">
+            <div class="container">
+                <div class="profile left fonexo">
+                    <img src="./image/" alt="">
+                    <h1 class="profade">안녕하세요.</h1><br>
+                    <h2 class="fosank profade">열정과 끈기로 준비된 신입 오민혁 입니다.</h2>
+                    <p class="profade">저의 포트폴리오를 방문해주셔서 감사합니다. 의견,제안 환영합니다 방명록기능이 있으니 이용 바랍니다.</p>
+                    <a href="#" class="profade">방명록 바로가기-></a>
+                    <h1 class="margint profade">즐거운시간 되세요!</h1>
+                </div>
+                <div class="profile right">
+
+                </div>
+            </div>
+        </div>
+        <div class="section02" id="section02">
+
+
         </div>
         <div class="footer">
 
         </div>
     </div>
     <script>
+        // 스크롤 이벤트
+        window.addEventListener('scroll', function(){
+            // 헤더배경색변경
+            let header = document.querySelector('.header')
+            if(window.scrollY>40){
+                header.style.backgroundColor="rgba(0,0,0,0.4)"
+            }else if(window.scrollY<40){
+                header.style.backgroundColor="#ffffff"
+            };
+            // 인사말 페이드인아웃 변경
+            let profade = document.querySelectorAll('.profade');
+            let resetFade = 0;
+            if(window.scrollY<300){
+                for(idx=0;idx<profade.length;idx++){
+                    profade[idx].style.opacity="0"
+                }
+            }
+            if(window.scrollY>300){
+                profade[0].style.opacity="1"
+            }
+            if(window.scrollY>400){
+                profade[1].style.opacity="1"
+            }
+            if(window.scrollY>500){
+                profade[2].style.opacity="1"
+                setTimeout(function() {
+                    profade[3].style.opacity="1"
+                }, 1500);
+            }
+            if(window.scrollY>650){
+                profade[4].style.opacity="1"
+                resetFade=1
+            }
+            if(resetFade ==1){
+                if(window.scrollY<650){
+                    for(idx=0;idx<profade.length;idx++){
+                        profade[idx].style.opacity="0"
+                    }
+                    return resetFade=0;
+                }
+            }
+            console.log(window.scrollY);
+        });
+        // 슬라이드 js
         let slide = document.querySelectorAll('.slide')
         var slideNum = 0
         function CheckSl(){
@@ -270,6 +398,11 @@
                 slideNum +=1
             }else{slideNum=0}
             CheckSl()
+        }
+        
+        
+        function HardWork(){
+
         }
     </script>
 </body>
