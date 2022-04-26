@@ -1,0 +1,13 @@
+@charset 'utf-8';
+
+/* 그라데이션 */
+@keyframes Start { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%} }
+    
+/* 스킬 박스쉐도우 */
+@keyframes skills-ani {
+    0%{box-shadow:0 0 0 #000;}
+    100%{box-shadow:0 0 10px #000;}
+}

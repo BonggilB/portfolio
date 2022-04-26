@@ -8,7 +8,8 @@
     <meta name="keywords" content="포트폴리오,웹포트폴리오,웹퍼블리셔,웹개발자">  
     <title>Oh's PortFolio</title>
     <link rel="stylesheet" href="./css/reset.css">
-    <!-- 폰트 멋있군 -->
+    <link rel="stylesheet" href="./css/animation.css">
+    <!-- 폰트 엄청난 -->
     <script src="https://kit.fontawesome.com/da49fd3603.js" crossorigin="anonymous"></script>
     <style>
         /* 폰트 */
@@ -28,6 +29,11 @@
             left:0;
             float: left;
         }
+        .center{
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
         .right{
             right: 0;
             float: right;
@@ -39,6 +45,10 @@
             display: none;
         }
         /* 기본스타일 */
+        img{
+            width: 100%;
+            box-sizing: border-box;
+        }
         .wrap{
             margin: 0 auto;
         }
@@ -96,19 +106,73 @@
         }
         /* 팝업 */
         .Start{
-            max-width: 600px;
+            position: fixed;
             width:60%;
             height: 60%;
-            color: #000;
+            max-width: 600px;
             z-index: 2000;
+            opacity: 0;
+            border: 4px solid #40DFEF;
+            border-radius: 5%;
+
             text-align: center;
-            align-items: center;
-            position: fixed;
+            color: #000;
+
+            background: linear-gradient(137deg, #40DFEF, #B9F8D3, #FFFBE7, #E78EA9);
+            background-size: 800% 800%;
+            animation: Start 8s ease infinite;
+            
+            transform: translate(-50%,-50%);
             transition: 2s ease-out;
             top: 50%;
             left: 50%;
-            transform: translate(-50%,-50%);
-            background-color: rgba(255,255,255,0.6);
+        }
+        
+        .img-box{
+            position: relative;
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            margin: 40px auto;
+            overflow: hidden;
+        }
+        .img-box img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%) scale(2);
+        }
+        .Start h2{
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        .Start label{
+            position: absolute;
+            cursor: pointer;
+            bottom: 10%;
+        }
+        .Start input[type="checkbox"]{
+            width: 2em;
+            height: 2em;
+            border: 4px solid #000;
+            -webkit-appearance: none;
+            cursor: pointer;
+            appearance: none;
+        }
+        .Start input[type="checkbox"]:checked{
+            background-color: #333 ;
+        }
+        .Start button{
+            position: absolute;
+            bottom: 10%;
+            right: 10%;
+            font-size: 1.5em;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+        /* 섹션 스타일 */
+        .sec01{
+            background-color: rgb(133,133,133);
         }
         /* 헤더 스타일 */
         .header {
@@ -169,14 +233,12 @@
             transform: translate(-50%,-50%);
         }
         .slide img{
+            width: 80%;
             position: absolute;
             top: 50%;
             left: 50%;
             filter: grayscale(0.7);
             transform: translate(-50%,-50%);
-        }
-        .slide02 img{
-            width: 80%;
         }
         .active{
             opacity: 1;
@@ -236,7 +298,6 @@
         /* 섹션1(프로필) 스타일 */
         .profile01{
             display: flex;
-            padding-top: 100px;
             width: 100%;
             height: 520px;
             background-color: #000;
@@ -257,13 +318,72 @@
         }
         .profade{
             opacity: 0;
-            transition: 1.0s ease-in;
+            transition: 0.3s ease-out;
             transform: translate(-0%,30%);
         }
-        /* 섹션2(포트폴리오) 스타일 */
+        /* 섹션2 스타일 */
         .profile02{
             width: 100%;
             height: 460px;
+            padding: 20px 0;
+            border-bottom: 2px solid rgb(133,133,133);
+            background-color: #FFFBE7;
+        }
+        .profile02 h2{
+            margin: 0 auto 20px auto;
+            width: 40%;
+            height: 20%;
+            border-radius: 50%;
+            padding-top: 3%;
+            font-size: 40px;
+            text-align: center;
+            color: #B9F8D3;
+            background-color: rgba(231, 142, 169,0.4);
+        }
+        .P-box{
+            display:flex;
+            height: 50%;
+            font-size: 10em;
+            color: #40DFEF;
+            justify-content: center;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .P-child{
+            width: 15%;
+            height: 250px;
+            padding: 0 3%;
+            border: 2px solid rgb(133,133,133);
+            border-radius: 5px;
+            text-align: center;
+        }
+        .P-child:hover{
+            animation: skills-ani 0.5s ease infinite alternate;
+        }
+        .P-child p{
+            font-size: 24px;
+            color: rgb(133,133,133);
+        }
+        /* 포트폴리오 스타일 */
+        .space{
+            width: 80%;
+            height: 100px;
+            margin: 0 auto;
+            color: #000;
+        }
+        .port{
+            display: flex;
+            width: 80%;
+            height: 400px;
+            margin: 0 auto;
+            border-bottom: 2px solid rgb(133,133,133);
+            background-color: #125B50;
+        }
+        .port-img img{
+            width: 100%;
+        }
+        .p-write{
+            width: 50%;
         }
     </style>
 </head>
@@ -276,17 +396,17 @@
             <li><a href="#header">마치며</a></li>
         </ul>
     </div>
-    <pop class="Start dis-none fonexo" id="Start">
+    <div class="Start dis-none fonexo" id="Start">
         <div class="popup">
             <div class="img-box">
-                <img src="./images/popup.jpg" alt="팝업이미지">
+                <img src="./image/lightbulb.jpg" alt="팝업이미지">
             </div>
-            <h2>모든페이지의 동작은</h2>
-            <p>제이쿼리,플러그인 없이 만들었습니다</p>
+            <h2>페이지의 모든 동작은</h2>
+            <p><span style="color: rgb(112, 103, 30);font-size: 1.2em;">제이쿼리 와 플러그인</span>을 사용하지않고 만들었습니다</p>
             <label><input type="checkbox" id="chk01">24시간 열지않음</label>
             <button type="button" id="btn-popup">닫기</button>
         </div>
-    </pop>
+    </div>
     <div class="wrap">
         <section class="sec01">
             <div class="header left">
@@ -298,7 +418,7 @@
                     <ul class="right">
                         <li><a href="#video">VIDEO</a></li>
                         <li><a href="#profile01">NARRATIVE</a></li>
-                        <li><a href="#profile02">PORTFOLIO</a></li>
+                        <li><a href="#portfolio">PORTFOLIO</a></li>
                         <li><a href="#section03">THANKS TO VISIT</a></li>
                     </ul>
                 </div>
@@ -306,20 +426,27 @@
             <div class="slidebox" id="video">
                 <div class="left_btn" onclick="sliprev()"><img src="./image/Next.svg" alt="이전"></div>
                 <div class="slide slide01 active">
+                    <video autoplay loop muted preload="auto">
+                        <source src="./video/freevideo_sea.mp4" type="video/mp4">
+                        파도영상(보고싶으시면 브라우저 설정에서 허용해주세요!)
+                    </video>
+                    <div class="sli_tit">
+                        <h1 class="sli_h1 fotape">Welcome!</h1>
+                        <p class="sli_text fonexo">안녕하세요!</p>
+                    </div>
+                </div>
+                <div class="slide slide02">
                     <a href="href" class="video">
-                        <video autoplay loop muted preload="auto">
-                            <source src="./video/freevideo_sea.mp4" type="video/mp4">
-                            파도영상(보고싶으시면 브라우저 설정에서 허용해주세요!)
-                        </video>
+                        <img src="" alt="동영상이미지" class="videoimg">
                         <div class="sli_tit">
-                            <h1 class="sli_h1 fotape">Welcome!</h1>
-                            <p class="sli_text fonexo">안녕하세요!</p>
+                            <h1 class="sli_h1 fotape">MY WORKING</h1>
+                            <p class="sli_text fonexo">Check My Work </p>
                         </div>
                     </a>
                 </div>
-                <div class="slide slide02">
+                <div class="slide slide03">
                     <a href="#" class="video" onClick='HardWork()'>
-                        <img src="./image/HardWorking.jpg" alt="근무할때 사진" class="videoimg">
+                        <img src="./image/HardWorking.jpg" alt="과거근무 사진" class="videoimg">
                         <div class="sli_tit">
                             <h1 class="sli_h1 fonexo">주 140시간 근무 생존 경험有</h1>
                             <p class="sli_text fonexo">자세한 내용이 궁금하면 눌러보세요!</p>
@@ -329,32 +456,59 @@
                         </div>
                     </a>
                 </div>
-                <div class="slide slide03">
-                    <a href="href" class="video">
-                        <img src="" alt="동영상이미지" class="videoimg">
-                        <div class="sli_tit">
-                            <h1 class="sli_h1 fotape">MY WORKING</h1>
-                            <p class="sli_text fonexo">Check My Work </p>
-                        </div>
-                    </a>
-                </div>
                 <div class="right_btn" onclick="slinext()"><img src="./image/Next.svg" alt="다음"></div>
             </div>
             <div class="profile01" id="profile01">
                 <div class="container">
                     <div class="profile left fonexo">
                         <img src="./image/" alt="">
-                        <h1 class="profade">안녕하세요.</h1><br>
-                        <h2 class="fosank profade">열정과 끈기로 준비된 신입 <span style="color: rgb(118, 255, 105);">오민혁</span> 입니다.</h2>
-                        <p class="profade">저의 포트폴리오를 방문해주셔서 감사합니다.<br> 의견,제안 환영합니다 방명록기능이 있으니 이용 바랍니다.</p>
+                        <h1 class="profade">NARRATIVE</h1><br>
+                        <h2 class="fosank profade">함께 발전하는걸 좋아하는 신입 <span style="color: rgb(118, 255, 105);">오민혁</span> 입니다.</h2>
+                        <p class="profade">저의 포트폴리오를 방문해주셔서 감사합니다.<br><br> 의견,제안 환영합니다 필요하신분들은 방명록기능이 있으니 이용해주세요.</p>
                         <a href="#" class="profade">방명록 바로가기-></a>
-                        <h1 class="margint profade">즐거운시간 되세요!</h1>
+                        <h1 class="margint center profade">즐거운시간 되세요!</h1>
                     </div>
                 </div>
             </div>
-            <div class="profile02" id="profile02">
-                ㅁㄴㅇㄹ
-
+            <div class="profile02">
+                <h2 class="fotape">I LOVE IT</h2>
+                <div class="P-box">
+                    <div class="P-child css3">
+                        <i class="fa-brands fa-css3-alt"></i>
+                        <p>CSS3</p>
+                    </div>
+                    <div class="P-child javascript">
+                        <i class="fa-brands fa-js-square"></i>
+                        <p>JS</p>
+                    </div>
+                    <div class="P-child mysql">
+                        <img src="./image/mysql-official.svg" alt="MYSQL이미지">
+                        <p>MYSQL DATABASE</p>
+                    </div>
+                    <div class="P-child eclipse">
+                        <img src="./image/Eclipse-Luna-Logo.svg" alt="Eclipse이미지">
+                        <p>ECLIPSE LUNA</p>
+                    </div>
+                </div>
+            </div>
+            <div class="space">
+                <h1>Welcome</h1>
+                <h2>My PortFolio</h2>
+            </div>
+            <div class="portFoliobox" id="portfolio">
+                <div class="port port01">
+                    <div class="port-img">
+                        <img src="./image/img-paiks.jpg" alt="빽다방 클론페이지">
+                    </div>
+                    <div class="p-write">
+                        <h1>대머리</h1>
+                        <h2>깎아라</h2>
+                        <p></p>
+                        <div class="p-btn source01"></div>
+                        <div class="p-btn how01"></div>
+                        <div class="p-btn goto01"></div>
+                    </div>
+                </div>
             </div>
         </section>
         <div class="footer">
@@ -379,6 +533,9 @@
             }
         // 팝업 보이기/감추기
         function popup(){
+            setTimeout(function() {
+                popEl.style.opacity="1";
+            }, 100);
             if(getCookie('mainPopup')!=='hidden'){
                 popEl.classList.remove('dis-none');
             }
@@ -392,7 +549,7 @@
         });
         // 스크롤 이벤트
         window.addEventListener('scroll', function(){
-            // 헤더배경색변경
+            // 헤더 배경색 변경
             let header = document.querySelector('.header')
             if(window.scrollY>40){
                 header.style.backgroundColor="rgba(0,0,0,0.4)"
@@ -401,35 +558,31 @@
             };
             // 인사말 페이드인아웃 변경
             let profade = document.querySelectorAll('.profade');
-            var resetFade = 0;
-            if(window.scrollY<300){
-                for(idx=0;idx<profade.length;idx++){
-                    profade[idx].style.opacity="0";
-                    profade[idx].style.transform = 'translate(-0%,30%)';
-                setTimeout(function() {
-                    profade[3].style.opacity="0"
-                }, 1500);
-                }
-            }
-            if(window.scrollY>300){
+            setInterval(function() {
+                if(window.scrollY<400){
+                    for(idx=0;idx<profade.length;idx++){
+                        profade[idx].style.opacity="0";
+                        profade[idx].style.transform = 'translate(-0%,30%)';
+                    }
+                }return;
+            },1500)
+            if(window.scrollY>250){
                 profade[0].style.opacity="1";
                 profade[0].style.transform = 'translate(0,0)';
             }
             if(window.scrollY>400){
                 profade[1].style.opacity="1";
                 profade[1].style.transform = "translate(0,0)";
+                setTimeout(()=>{
+                    profade[2].style.opacity="1";
+                    profade[2].style.transform = "translate(0,0)";},300);
+                setTimeout(()=>{
+                    profade[3].style.opacity="1";
+                    profade[3].style.transform = "translate(0,0)";},600);
             }
-            if(window.scrollY>500){
-                profade[2].style.opacity="1";
-                profade[2].style.transform = "translate(0,0)";
-                setTimeout(function() {
-                    profade[3].style.opacity="1"
-                }, 1500);
-            }
-            if(window.scrollY>700){
-                profade[4].style.opacity="1"
+            if(window.scrollY>650){
+                profade[4].style.opacity="1";
                 profade[4].style.transform = "translate(0,0)";
-                resetFade = 1
             }
             // if(resetFade == 1 && window.scrollY<600){
             //     for(idx=0;idx<profade.length;idx++){
