@@ -8,6 +8,8 @@
     <meta name="keywords" content="포트폴리오,웹포트폴리오,웹퍼블리셔,웹개발자">  
     <title>Oh's PortFolio</title>
     <link rel="stylesheet" href="./css/reset.css">
+    <!-- 폰트 멋있군 -->
+    <script src="https://kit.fontawesome.com/da49fd3603.js" crossorigin="anonymous"></script>
     <style>
         /* 폰트 */
         @import url('https://fonts.googleapis.com/css2?family=Ms+Madi&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Tapestry&display=swap');        /* 기본 스타일 */
@@ -17,6 +19,7 @@
             font-weight: normal;
             font-style: normal;
         }
+        /* 공용워크벤치 */
         :root{
             color: rgb(133,133,133);
             font-family: 'Noto Sans KR', sans-serif;
@@ -32,6 +35,10 @@
         .margint{
             margin-top: 50px;
         }
+        .dis-none{
+            display: none;
+        }
+        /* 기본스타일 */
         .wrap{
             margin: 0 auto;
         }
@@ -66,7 +73,7 @@
             filter: brightness(0.7);
             transform: translateY(-20%) scale(1.5);
         }
-        /* 폰트클래스 */
+        /* 폰트 */
         .fomadi{
             font-family: 'Ms Madi', sans-serif;
             font-weight: 700;
@@ -86,6 +93,22 @@
         }
         .fonexo{
             font-family:'NEXON Lv1 Gothic OTF Bold',sans-serif;
+        }
+        /* 팝업 */
+        .Start{
+            max-width: 600px;
+            width:60%;
+            height: 60%;
+            color: #000;
+            z-index: 2000;
+            text-align: center;
+            align-items: center;
+            position: fixed;
+            transition: 2s ease-out;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: rgba(255,255,255,0.6);
         }
         /* 헤더 스타일 */
         .header {
@@ -149,12 +172,11 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 100%;
             filter: grayscale(0.7);
             transform: translate(-50%,-50%);
         }
         .slide02 img{
-            transform: translate(-50%,-70%);
+            width: 80%;
         }
         .active{
             opacity: 1;
@@ -212,19 +234,20 @@
             text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
         }
         /* 섹션1(프로필) 스타일 */
-        .section01{
+        .profile01{
             display: flex;
+            padding-top: 100px;
             width: 100%;
             height: 520px;
             background-color: #000;
         }
-        .section01 .container{
+        .profile01 .container{
             display: flex;
             width: 80%;
-            margin: 90px auto;
+            margin: 50px auto;
         }
         .profile{
-            width: 50%;
+            width: 100%;
             color: #fff;
             font-size: 24px;
         }
@@ -234,10 +257,11 @@
         }
         .profade{
             opacity: 0;
-            transition: 1.0s;
+            transition: 1.0s ease-in;
+            transform: translate(-0%,30%);
         }
         /* 섹션2(포트폴리오) 스타일 */
-        .section02{
+        .profile02{
             width: 100%;
             height: 460px;
         }
@@ -252,82 +276,120 @@
             <li><a href="#header">마치며</a></li>
         </ul>
     </div>
+    <pop class="Start dis-none fonexo" id="Start">
+        <div class="popup">
+            <div class="img-box">
+                <img src="./images/popup.jpg" alt="팝업이미지">
+            </div>
+            <h2>모든페이지의 동작은</h2>
+            <p>제이쿼리,플러그인 없이 만들었습니다</p>
+            <label><input type="checkbox" id="chk01">24시간 열지않음</label>
+            <button type="button" id="btn-popup">닫기</button>
+        </div>
+    </pop>
     <div class="wrap">
-        <div class="header left">
-            <div class="logo">
-                <a href="./index.html"><svg class="svg" xmlns="http://www.w3.org/2000/svg" width="40" height="40" xml:space="preserve"><text transform="translate(6.981 24.092)" fill="#FFF" font-family="'Roboto-Regular'" font-size="14">Oh’s</text><circle stroke="#000" stroke-miterlimit="10" cx="20" cy="20" r="19"/><text transform="translate(6.981 24.092)" fill="#D3D2D2" font-family="'Roboto-Regular'" font-size="14">Oh’s</text></svg></a>
-                <a href="./index.html"><p>Oh's<br> PORTFOLIO</p></a>
-            </div>
-            <div class="nav">
-                <ul class="right">
-                    <li><a href="#video">VIDEO</a></li>
-                    <li><a href="#section01">NARRATIVE</a></li>
-                    <li><a href="#section02">PORTFOLIO</a></li>
-                    <li><a href="#section03">THANKS TO VISIT</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="slidebox" id="video">
-            <div class="left_btn" onclick="sliprev()"><img src="./image/Next.svg" alt="이전"></div>
-            <div class="slide slide01 active">
-                <a href="href" class="video">
-                    <video autoplay loop muted preload="auto">
-                        <source src="./video/freevideo_sea.mp4" type="video/mp4">
-                        파도영상(보고싶으시면 브라우저 설정에서 허용해주세요!)
-                      </video>
-                    <div class="sli_tit">
-                        <h1 class="sli_h1 fotape">Welcome!</h1>
-                        <p class="sli_text fonexo">안녕하세요!</p>
-                    </div>
-                </a>
-            </div>
-            <div class="slide slide02">
-                <a href="#" class="video" onClick='HardWork()'>
-                    <img src="./image/HardWorking.jpg" alt="근무할때 사진" class="videoimg">
-                    <div class="sli_tit">
-                        <h1 class="sli_h1 fonexo">주 140시간 근무 생존 경험有</h1>
-                        <p class="sli_text fonexo">자세한 내용이 궁금하면 눌러보세요!</p>
-                    </div>
-                    <div class="hardwork popup">
-
-                    </div>
-                </a>
-            </div>
-            <div class="slide slide03">
-                <a href="href" class="video">
-                    <img src="" alt="동영상이미지" class="videoimg">
-                    <div class="sli_tit">
-                        <h1 class="sli_h1 fotape">MY WORKING</h1>
-                        <p class="sli_text fonexo">Check My Work </p>
-                    </div>
-                </a>
-            </div>
-            <div class="right_btn" onclick="slinext()"><img src="./image/Next.svg" alt="다음"></div>
-        </div>
-        <div class="section01" id="section01">
-            <div class="container">
-                <div class="profile left fonexo">
-                    <img src="./image/" alt="">
-                    <h1 class="profade">안녕하세요.</h1><br>
-                    <h2 class="fosank profade">열정과 끈기로 준비된 신입 오민혁 입니다.</h2>
-                    <p class="profade">저의 포트폴리오를 방문해주셔서 감사합니다. 의견,제안 환영합니다 방명록기능이 있으니 이용 바랍니다.</p>
-                    <a href="#" class="profade">방명록 바로가기-></a>
-                    <h1 class="margint profade">즐거운시간 되세요!</h1>
+        <section class="sec01">
+            <div class="header left">
+                <div class="logo">
+                    <a href="./index.html"><svg class="svg" xmlns="http://www.w3.org/2000/svg" width="40" height="40" xml:space="preserve"><text transform="translate(6.981 24.092)" fill="#FFF" font-family="'Roboto-Regular'" font-size="14">Oh’s</text><circle stroke="#000" stroke-miterlimit="10" cx="20" cy="20" r="19"/><text transform="translate(6.981 24.092)" fill="#D3D2D2" font-family="'Roboto-Regular'" font-size="14">Oh’s</text></svg></a>
+                    <a href="./index.html"><p>Oh's<br> PORTFOLIO</p></a>
                 </div>
-                <div class="profile right">
-
+                <div class="nav">
+                    <ul class="right">
+                        <li><a href="#video">VIDEO</a></li>
+                        <li><a href="#profile01">NARRATIVE</a></li>
+                        <li><a href="#profile02">PORTFOLIO</a></li>
+                        <li><a href="#section03">THANKS TO VISIT</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-        <div class="section02" id="section02">
-            ㅁㄴㅇㄹ
+            <div class="slidebox" id="video">
+                <div class="left_btn" onclick="sliprev()"><img src="./image/Next.svg" alt="이전"></div>
+                <div class="slide slide01 active">
+                    <a href="href" class="video">
+                        <video autoplay loop muted preload="auto">
+                            <source src="./video/freevideo_sea.mp4" type="video/mp4">
+                            파도영상(보고싶으시면 브라우저 설정에서 허용해주세요!)
+                        </video>
+                        <div class="sli_tit">
+                            <h1 class="sli_h1 fotape">Welcome!</h1>
+                            <p class="sli_text fonexo">안녕하세요!</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="slide slide02">
+                    <a href="#" class="video" onClick='HardWork()'>
+                        <img src="./image/HardWorking.jpg" alt="근무할때 사진" class="videoimg">
+                        <div class="sli_tit">
+                            <h1 class="sli_h1 fonexo">주 140시간 근무 생존 경험有</h1>
+                            <p class="sli_text fonexo">자세한 내용이 궁금하면 눌러보세요!</p>
+                        </div>
+                        <div class="hardwork popup">
 
-        </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="slide slide03">
+                    <a href="href" class="video">
+                        <img src="" alt="동영상이미지" class="videoimg">
+                        <div class="sli_tit">
+                            <h1 class="sli_h1 fotape">MY WORKING</h1>
+                            <p class="sli_text fonexo">Check My Work </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="right_btn" onclick="slinext()"><img src="./image/Next.svg" alt="다음"></div>
+            </div>
+            <div class="profile01" id="profile01">
+                <div class="container">
+                    <div class="profile left fonexo">
+                        <img src="./image/" alt="">
+                        <h1 class="profade">안녕하세요.</h1><br>
+                        <h2 class="fosank profade">열정과 끈기로 준비된 신입 <span style="color: rgb(118, 255, 105);">오민혁</span> 입니다.</h2>
+                        <p class="profade">저의 포트폴리오를 방문해주셔서 감사합니다.<br> 의견,제안 환영합니다 방명록기능이 있으니 이용 바랍니다.</p>
+                        <a href="#" class="profade">방명록 바로가기-></a>
+                        <h1 class="margint profade">즐거운시간 되세요!</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="profile02" id="profile02">
+                ㅁㄴㅇㄹ
+
+            </div>
+        </section>
         <div class="footer">
 
         </div>
     </div>
     <script>
+        // 팝업이벤트
+        let popEl = document.getElementById('Start');
+        let chk01 = document.getElementById('chk01'); // 뷁
+        let btnPopup = document.getElementById('btn-popup');
+        popup();
+        // 쿠키
+            function setCookie(name,value,expir){
+                let date = new Date();
+                date.setDate(date.getDate() + expir);
+                document.cookie = name + '=' + value + ';expires=' + date +';path=/;';
+            }
+            function getCookie(name) { 
+                let value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+                return value? value[2] : null;
+            }
+        // 팝업 보이기/감추기
+        function popup(){
+            if(getCookie('mainPopup')!=='hidden'){
+                popEl.classList.remove('dis-none');
+            }
+        }
+        // 팝업닫기
+        btnPopup.addEventListener('click',()=>{
+            popEl.classList.add('dis-none');
+            if(chk01.checked){
+                setCookie('mainPopup','hidden',1);
+            }
+        });
         // 스크롤 이벤트
         window.addEventListener('scroll', function(){
             // 헤더배경색변경
@@ -337,38 +399,48 @@
             }else if(window.scrollY<40){
                 header.style.backgroundColor="#ffffff"
             };
-            // 인사말 페이드인아웃 변경 인학이 구돼지
+            // 인사말 페이드인아웃 변경
             let profade = document.querySelectorAll('.profade');
-            let resetFade = 0;
+            var resetFade = 0;
             if(window.scrollY<300){
                 for(idx=0;idx<profade.length;idx++){
-                    profade[idx].style.opacity="0"
+                    profade[idx].style.opacity="0";
+                    profade[idx].style.transform = 'translate(-0%,30%)';
+                setTimeout(function() {
+                    profade[3].style.opacity="0"
+                }, 1500);
                 }
             }
             if(window.scrollY>300){
-                profade[0].style.opacity="1"
+                profade[0].style.opacity="1";
+                profade[0].style.transform = 'translate(0,0)';
             }
             if(window.scrollY>400){
-                profade[1].style.opacity="1"
+                profade[1].style.opacity="1";
+                profade[1].style.transform = "translate(0,0)";
             }
             if(window.scrollY>500){
-                profade[2].style.opacity="1"
+                profade[2].style.opacity="1";
+                profade[2].style.transform = "translate(0,0)";
                 setTimeout(function() {
                     profade[3].style.opacity="1"
                 }, 1500);
             }
-            if(window.scrollY>650){
+            if(window.scrollY>700){
                 profade[4].style.opacity="1"
-                resetFade=1
+                profade[4].style.transform = "translate(0,0)";
+                resetFade = 1
             }
-            if(resetFade ==1){
-                if(window.scrollY<650){
-                    for(idx=0;idx<profade.length;idx++){
-                        profade[idx].style.opacity="0"
-                    }
-                    return resetFade=0;
-                }
-            }
+            // if(resetFade == 1 && window.scrollY<600){
+            //     for(idx=0;idx<profade.length;idx++){
+            //         profade[idx].style.opacity="0";
+            //         profade[idx].style.transform = 'translate(-0%,30%)';
+            //     setTimeout(function() {
+            //         profade[3].style.opacity="0"
+            //     }, 1500);
+            //     }
+            //     resetFade = 0
+            // }
             console.log(window.scrollY);
         });
         // 슬라이드 js
@@ -381,7 +453,7 @@
                 slide[1].classList.add('active')
             }else if(slideNum==2){
                 slide[2].classList.add('active')
-            }else{alert('오류입니다 ㅜ제보부탁드려요.')}
+            }else{alert('이 메세지는 오류입니다 아마 아무도 못보겠죠 ㅎㅎ')}
         }
         function sliprev(){
             for(idx=0;idx<slide.length;idx++){
