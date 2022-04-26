@@ -112,7 +112,7 @@
             max-width: 600px;
             z-index: 2000;
             opacity: 0;
-            border: 4px solid #40DFEF;
+            border: 2px solid #000;
             border-radius: 5%;
 
             text-align: center;
@@ -162,12 +162,12 @@
         .Start input[type="checkbox"]:checked{
             background-color: #333 ;
         }
-        .Start button{
+        #btn-popup{
             position: absolute;
             bottom: 10%;
-            right: 10%;
-            font-size: 1.5em;
-            border: 2px solid black;
+            right: 15%;
+            cursor: pointer;
+            font-size: 2em;
             border-radius: 5px;
         }
         /* 섹션 스타일 */
@@ -404,7 +404,7 @@
             <h2>페이지의 모든 동작은</h2>
             <p><span style="color: rgb(112, 103, 30);font-size: 1.2em;">제이쿼리 와 플러그인</span>을 사용하지않고 만들었습니다</p>
             <label><input type="checkbox" id="chk01">24시간 열지않음</label>
-            <button type="button" id="btn-popup">닫기</button>
+            <i id="btn-popup" class="fa-solid fa-circle-xmark"></i>
         </div>
     </div>
     <div class="wrap">
@@ -417,7 +417,7 @@
                 <div class="nav">
                     <ul class="right">
                         <li><a href="#video">VIDEO</a></li>
-                        <li><a href="#profile01">NARRATIVE</a></li>
+                        <li><a href="#profile01">ABOUT ME</a></li>
                         <li><a href="#portfolio">PORTFOLIO</a></li>
                         <li><a href="#section03">THANKS TO VISIT</a></li>
                     </ul>
@@ -462,7 +462,7 @@
                 <div class="container">
                     <div class="profile left fonexo">
                         <img src="./image/" alt="">
-                        <h1 class="profade">NARRATIVE</h1><br>
+                        <h1 class="profade">ABOUT ME</h1><br>
                         <h2 class="fosank profade">함께 발전하는걸 좋아하는 신입 <span style="color: rgb(118, 255, 105);">오민혁</span> 입니다.</h2>
                         <p class="profade">저의 포트폴리오를 방문해주셔서 감사합니다.<br><br> 의견,제안 환영합니다 필요하신분들은 방명록기능이 있으니 이용해주세요.</p>
                         <a href="#" class="profade">방명록 바로가기-></a>
@@ -559,14 +559,14 @@
             // 인사말 페이드인아웃 변경
             let profade = document.querySelectorAll('.profade');
             setInterval(function() {
-                if(window.scrollY<400){
+                if(window.scrollY<200){
                     for(idx=0;idx<profade.length;idx++){
                         profade[idx].style.opacity="0";
                         profade[idx].style.transform = 'translate(-0%,30%)';
                     }
                 }return;
             },1500)
-            if(window.scrollY>250){
+            if(window.scrollY>200){
                 profade[0].style.opacity="1";
                 profade[0].style.transform = 'translate(0,0)';
             }
