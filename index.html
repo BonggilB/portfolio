@@ -326,6 +326,7 @@
         .profile02{
             width: 100%;
             height: 460px;
+            margin: 0 auto;
             padding: 20px 0;
             border-bottom: 2px solid rgb(133,133,133);
             background-color: #FFFBE7;
@@ -339,7 +340,6 @@
             font-size: 40px;
             text-align: center;
             color: #B9F8D3;
-            background-color: rgba(231, 142, 169,0.4);
         }
         .P-box{
             display:flex;
@@ -395,20 +395,90 @@
             left: 10%;
             opacity: 1;
         }
+        .portFoliobox{
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
         .port{
-            display: flex;
-            width: 80%;
             height: 400px;
             padding: 4px;
-            margin: 0 auto;
+            position: relative;
+            display: flex;
             border:2px solid #000;
             border-radius: 4px;
+            overflow: hidden;
         }
         .port-img img{
             width: 100%;
         }
         .p-write{
             width: 50%;
+            font-family:'NEXON Lv1 Gothic OTF Bold',sans-serif;
+            font-size: 1.5em;
+            line-height: 2;
+            padding: 15px;
+        }
+        .p-cicle {
+            position: absolute;
+            right: -27%;
+            bottom: -84%;
+            width: 800px;
+            height: 600px;
+            z-index: -100;
+            background-color: #F8ECD1;
+            border-radius: 50%;
+        }
+        .p-btn{
+            width: 25%;
+            display: flex;
+            flex-flow: column;
+            justify-content: space-between;
+        }
+        .port,.p-btn{
+            height: 50%;
+        }
+        .p-btn div{
+            text-align: center;
+            color: rgb(133,133,133);
+            border: 2px solid #000;
+            border-radius: 4px;
+        }
+        .p-btn div:hover{
+            color: #000;
+        }
+        .port01 h1{
+            color: #85586F;
+        }
+        .port01 h2{
+            color:#AC7D88 ;
+        }
+        .port01 p{
+            color:#DEB6AB ;
+        }
+        .port02 h1{
+            color: #1C0C5B;
+        }
+        .port02 h2{
+            color:#3D2C8D ;
+        }
+        .port02 p{
+            color:#916BBF ;
+        }
+        .p-cicle02{
+            background-color: #C996CC;
+        }
+        .port03 h1{
+            color: #630606;
+        }
+        .port03 h2{
+            color:#890F0D ;
+        }
+        .port03 p{
+            color:#E83A14 ;
+        }
+        .p-cicle03{
+            background-color: #D9CE3F;
         }
     </style>
 </head>
@@ -526,13 +596,54 @@
                         <img src="./image/img-paiks.jpg" alt="빽다방 클론페이지">
                     </div>
                     <div class="p-write">
-                        <h1>대머리</h1>
-                        <h2>깎아라</h2>
-                        <p></p>
-                        <div class="p-btn source01"></div>
-                        <div class="p-btn how01"></div>
-                        <div class="p-btn goto01"></div>
+                        <div class="p-text"> 
+                            <h1>빽다방</h1>
+                            <h2>#일상에 꼭필요한 커피</h2>
+                            <p>#시원한 ,#따듯한 #아메리카노 #라떼 어떤게 더 좋으신가요?</p>
+                        </div>
+                        <div class="p-btn">
+                           <a href="#"><div class="goto01">바로가기</div></a>
+                           <a href="#"><div class="source01">소스보기</div></a>
+                           <a href="#"><div class="how01">이야기</div></a>
+                        </div>
                     </div>
+                    <div class="p-cicle p-cicle01"></div>
+                </div>
+                <div class="port port02">
+                    <div class="port-img">
+                        <img src="./image/img-megabox.jpg" alt="메가박스 클론페이지">
+                    </div>
+                    <div class="p-write">
+                        <div class="p-text"> 
+                            <h1>MEGA BOX</h1>
+                            <h2>#가끔 재밌는 영화한편</h2>
+                            <p>#황정민 #최민식 둘중에 연기잘하는 배우 한명을 고르자면?</p>
+                        </div>
+                        <div class="p-btn">
+                           <a href="#"><div class="goto02">바로가기</div></a>
+                           <a href="#"><div class="source02">소스보기</div></a>
+                           <a href="#"><div class="how02">이야기</div></a>
+                        </div>
+                    </div>
+                    <div class="p-cicle p-cicle02"></div>
+                </div>
+                <div class="port port03">
+                    <div class="port-img">
+                        <img src="./image/img-hollys.jpg" alt="할리스커피 클론페이지">
+                    </div>
+                    <div class="p-write">
+                        <div class="p-text"> 
+                            <h1>HOLLYS</h1>
+                            <h2>#또 커피에요.</h2>
+                            <p>#정말 커피를 좋아하나봐요 커피 페이지만 두개에요!</p>
+                        </div>
+                        <div class="p-btn">
+                           <a href="#"><div class="goto03">바로가기</div></a>
+                           <a href="#"><div class="source03">소스보기</div></a>
+                           <a href="#"><div class="how03">이야기</div></a>
+                        </div>
+                    </div>
+                    <div class="p-cicle p-cicle03"></div>
                 </div>
             </div>
         </section>
