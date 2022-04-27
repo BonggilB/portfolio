@@ -44,6 +44,10 @@
         .dis-none{
             display: none;
         }
+        .wrap{
+            width: 100%;
+            overflow: hidden;
+        }
         /* 기본스타일 */
         img{
             width: 100%;
@@ -110,6 +114,7 @@
             width:60%;
             height: 60%;
             max-width: 600px;
+            min-height: 550px;
             z-index: 2000;
             opacity: 0;
             border: 2px solid #000;
@@ -170,10 +175,6 @@
             font-size: 2em;
             border-radius: 5px;
         }
-        /* 섹션 스타일 */
-        .sec01{
-            background-color: rgb(133,133,133);
-        }
         /* 헤더 스타일 */
         .header {
             z-index: 1000;
@@ -216,15 +217,15 @@
         .slidebox{
             position: relative;
             width:100%;
-            height: 40em;
+            height: 100vh;
             margin-top: 40px;
-            background-color: rgb(133,133,133);
+            background-color: #000;
             overflow: hidden;
         }
         .slide{
             position: absolute;
             width: 100%;
-            height: 100%;
+            height: 100vh;
             left: 50%;
             top: 50%;
             z-index: -1;
@@ -361,23 +362,47 @@
             animation: skills-ani 0.5s ease infinite alternate;
         }
         .P-child p{
-            font-size: 24px;
-            color: rgb(133,133,133);
+            margin-top: 1em;
+            font-size: 28px;
+            color: #000;
         }
         /* 포트폴리오 스타일 */
         .space{
-            width: 80%;
-            height: 100px;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+
+            width: 100%;
+            height: 300px;
             margin: 0 auto;
+            background: linear-gradient(to bottom,rgb(133,133,133),#fff);
+
+            font-size: 1.5em;
             color: #000;
+            line-height: 3;
+        }
+        .spa_h{
+            position: absolute;
+            left: -20%;
+            opacity: 0;
+            transition: 0.8s ease-out;
+            font-size: 1.4em;
+        }
+        .spa_h:last-child{
+            transform: translateY(60px);
+        }
+        .spa_active{
+            left: 10%;
+            opacity: 1;
         }
         .port{
             display: flex;
             width: 80%;
             height: 400px;
+            padding: 4px;
             margin: 0 auto;
-            border-bottom: 2px solid rgb(133,133,133);
-            background-color: #125B50;
+            border:2px solid #000;
+            border-radius: 4px;
         }
         .port-img img{
             width: 100%;
@@ -463,8 +488,8 @@
                     <div class="profile left fonexo">
                         <img src="./image/" alt="">
                         <h1 class="profade">ABOUT ME</h1><br>
-                        <h2 class="fosank profade">함께 발전하는걸 좋아하는 신입 <span style="color: rgb(118, 255, 105);">오민혁</span> 입니다.</h2>
-                        <p class="profade">저의 포트폴리오를 방문해주셔서 감사합니다.<br><br> 의견,제안 환영합니다 필요하신분들은 방명록기능이 있으니 이용해주세요.</p>
+                        <h2 class="fosank profade">발전하고 싶은 신입 <span style="color: rgb(118, 255, 105);">오민혁</span> 입니다.</h2>
+                        <p class="profade">저의 포트폴리오를 방문해주셔서 감사합니다.<br><br> <span class="profade">의견,제안 환영합니다 필요하신분들은 방명록기능이 있으니 이용해주세요.</span></p>
                         <a href="#" class="profade">방명록 바로가기-></a>
                         <h1 class="margint center profade">즐거운시간 되세요!</h1>
                     </div>
@@ -475,25 +500,25 @@
                 <div class="P-box">
                     <div class="P-child css3">
                         <i class="fa-brands fa-css3-alt"></i>
-                        <p>CSS3</p>
+                        <p class="fonexo">CSS3</p>
                     </div>
                     <div class="P-child javascript">
                         <i class="fa-brands fa-js-square"></i>
-                        <p>JS</p>
+                        <p class="fonexo">JS</p>
                     </div>
                     <div class="P-child mysql">
                         <img src="./image/mysql-official.svg" alt="MYSQL이미지">
-                        <p>MYSQL DATABASE</p>
+                        <p class="fonexo">MYSQL DATABASE</p>
                     </div>
                     <div class="P-child eclipse">
                         <img src="./image/Eclipse-Luna-Logo.svg" alt="Eclipse이미지">
-                        <p>ECLIPSE LUNA</p>
+                        <p class="fonexo">ECLIPSE LUNA</p>
                     </div>
                 </div>
             </div>
             <div class="space">
-                <h1>Welcome</h1>
-                <h2>My PortFolio</h2>
+                <h1 class="spa_h fomadi">Welcome</h1>
+                <h2 class="spa_h fomadi">My PortFolio</h2>
             </div>
             <div class="portFoliobox" id="portfolio">
                 <div class="port port01">
@@ -518,7 +543,7 @@
     <script>
         // 팝업이벤트
         let popEl = document.getElementById('Start');
-        let chk01 = document.getElementById('chk01'); // 뷁
+        let chk01 = document.getElementById('chk01');
         let btnPopup = document.getElementById('btn-popup');
         popup();
         // 쿠키
@@ -578,25 +603,26 @@
                     profade[2].style.transform = "translate(0,0)";},300);
                 setTimeout(()=>{
                     profade[3].style.opacity="1";
-                    profade[3].style.transform = "translate(0,0)";},600);
+                    profade[3].style.transform = "translate(0,0)";},700);
+                setTimeout(()=>{
+                profade[4].style.opacity="1";
+                profade[4].style.transform = "translate(0,0)";},1100);
             }
             if(window.scrollY>650){
-                profade[4].style.opacity="1";
-                profade[4].style.transform = "translate(0,0)";
+                profade[5].style.opacity="1";
+                profade[5].style.transform = "translate(0,0)";
             }
-            // if(resetFade == 1 && window.scrollY<600){
-            //     for(idx=0;idx<profade.length;idx++){
-            //         profade[idx].style.opacity="0";
-            //         profade[idx].style.transform = 'translate(-0%,30%)';
-            //     setTimeout(function() {
-            //         profade[3].style.opacity="0"
-            //     }, 1500);
-            //     }
-            //     resetFade = 0
-            // }
+            // 포트폴리오 인사말
+            let space = document.querySelectorAll('.spa_h')
+            if(window.scrollY>1200){
+                space[0].classList.add('spa_active');
+                setTimeout(()=>{
+                    space[1].classList.add('spa_active');
+                },900)
+            }
             console.log(window.scrollY);
         });
-        // 슬라이드 js
+        // 슬라이드
         let slide = document.querySelectorAll('.slide')
         var slideNum = 0
         function CheckSl(){
