@@ -25,6 +25,12 @@
             color: rgb(133,133,133);
             font-family: 'Noto Sans KR', sans-serif;
         }
+        .relative{
+            position: relative;
+        }
+        .absolute{
+            position: absolute;
+        }
         .left{
             left:0;
             float: left;
@@ -241,6 +247,9 @@
             filter: grayscale(0.7);
             transform: translate(-50%,-50%);
         }
+        .sli_img01{
+            filter: grayscale(1);
+        }
         .active{
             opacity: 1;
             z-index: 50;
@@ -308,6 +317,7 @@
             width: 80%;
             margin: 50px auto;
         }
+        /* 인사말 */
         .profile{
             width: 100%;
             color: #fff;
@@ -322,16 +332,72 @@
             transition: 0.3s ease-out;
             transform: translate(-0%,30%);
         }
-        /* 섹션2 스타일 */
-        .profile02{
+        /* 프로필사진 소개 */
+        .profile01-1{
             width: 100%;
+            background-color: #000;
+            padding: 40px;
+        }
+        .profile01-1 .container{
+            display: flex;
+            width: 80%;
+            margin: 0 auto;
+            flex-flow: row;
+        }
+        .int_box{
+            display: flex;
+        }
+        .int_img{
+            width: 20%;
+            overflow: hidden;
+            opacity: 0;
+            transition: 1.2s;
+        }
+        .int_img img{
+            transform: scale(1.5);
+            width: 100%;
+        }
+        .int_txtbox{
+            width: 80%;
+        }
+        .int_tit{
+            height:21%;
+            padding-left: 5%;
+            font-size: 2em; 
+            color: #fff;
+        }
+        .int_txt{
+            height: 13.5%;
+            padding: 1% 0 1% 10%;
+            font-size: 1.2em;
+            color: rgb(133,133,133);
+            opacity: 0;
+
+            transform: translateX(-10%);
+            transition: 0.3s;
+        }
+        .int_txt p{
+            font-size: 1.0em;   
+            color: #fff;
+        }
+        .int_txt:last-child{
+            height: 25%;
+        }
+        /* 섹션2 (스킬) 스타일 */
+        .skill_box{
+            background-color: #000;
+            padding-bottom: 5%;
+        }
+        .skills{
+            width: 95%;
             height: 460px;
             margin: 0 auto;
             padding: 20px 0;
             border-bottom: 2px solid rgb(133,133,133);
-            background-color: #FFFBE7;
+            background-color: #000;
+            background-color: rgba(255, 251, 231,0.9);
         }
-        .profile02 h2{
+        .skills h2{
             margin: 0 auto 20px auto;
             width: 40%;
             height: 20%;
@@ -512,7 +578,7 @@
                 <div class="nav">
                     <ul class="right">
                         <li><a href="#video">VIDEO</a></li>
-                        <li><a href="#profile01">ABOUT ME</a></li>
+                        <li><a href="#profile01-1">ABOUT ME</a></li>
                         <li><a href="#portfolio">PORTFOLIO</a></li>
                         <li><a href="#section03">THANKS TO VISIT</a></li>
                     </ul>
@@ -521,10 +587,11 @@
             <div class="slidebox" id="video">
                 <div class="left_btn" onclick="sliprev()"><img src="./image/Next.svg" alt="이전"></div>
                 <div class="slide slide01 active">
-                    <video autoplay loop muted preload="auto">
+                    <img class="sli_img01" src="./image/title.jpg" alt="타이틀 이미지">
+                    <!-- <video autoplay loop muted preload="auto">
                         <source src="./video/freevideo_sea.mp4" type="video/mp4">
                         파도영상(보고싶으시면 브라우저 설정에서 허용해주세요!)
-                    </video>
+                    </video> -->
                     <div class="sli_tit">
                         <h1 class="sli_h1 fotape">Welcome!</h1>
                         <p class="sli_text fonexo">안녕하세요!</p>
@@ -553,7 +620,7 @@
                 </div>
                 <div class="right_btn" onclick="slinext()"><img src="./image/Next.svg" alt="다음"></div>
             </div>
-            <div class="profile01" id="profile01">
+            <div class="profile01" >
                 <div class="container">
                     <div class="profile left fonexo">
                         <img src="./image/" alt="">
@@ -565,24 +632,59 @@
                     </div>
                 </div>
             </div>
-            <div class="profile02">
-                <h2 class="fotape">I LOVE IT</h2>
-                <div class="P-box">
-                    <div class="P-child css3">
-                        <i class="fa-brands fa-css3-alt"></i>
-                        <p class="fonexo">CSS3</p>
+            <div class="profile01-1" id="profile01-1">
+                <div class="container">
+                    <div class="int_box left fonexo">
+                        <div class="int_img">
+                            <img src="./image/profile.jpg" alt="프로필 이미지">
+                        </div>
+                        <ul class="int_txtbox relative">
+                            <li class="int_tit">
+                                <h1>이런 사람 어떤가요?</h1>
+                            </li>
+                            <li class="int_txt int_txt01">
+                                <h2 class="">1#시키는것만 하는게아닌 끊임없이 생각하는사람</h2>
+                                <p class="">일을맡으면 이건왜그럴까? 라는 생각을해요</p>
+                            </li>
+                            <li class="int_txt int_txt02">
+                                <h2 class="">2#회사의 발전을 좋아하는사람</h2>
+                                <p class="">회사도 나도 함께 성장해가고 싶어요</p>
+                            </li>
+                            <li class="int_txt int_txt03">
+                                <h2 class="">3#중간관리자 경험이 있는사람</h2>
+                                <p class="">사원의 의견을 부장,이사의 지시를 이어주는 다리역할을 했어요</p>
+                            </li>
+                            <li class="int_txt int_txt04">
+                                <h2 class="">4#가끔 귀여운 사람</h2>
+                                <p class="">커피 잘타요!</p>
+                            </li>
+                            <li class="int_txt int_txt05">
+                                <a href="#" class="resume">이력서 바로가기</a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="P-child javascript">
-                        <i class="fa-brands fa-js-square"></i>
-                        <p class="fonexo">JS</p>
-                    </div>
-                    <div class="P-child mysql">
-                        <img src="./image/mysql-official.svg" alt="MYSQL이미지">
-                        <p class="fonexo">MYSQL DATABASE</p>
-                    </div>
-                    <div class="P-child eclipse">
-                        <img src="./image/Eclipse-Luna-Logo.svg" alt="Eclipse이미지">
-                        <p class="fonexo">ECLIPSE LUNA</p>
+                </div>
+            </div>
+            <div class="skill_box">
+                <div class="skills">
+                    <h2 class="fotape">I LOVE IT</h2>
+                    <div class="P-box">
+                        <div class="P-child css3">
+                            <i class="fa-brands fa-css3-alt"></i>
+                            <p class="fonexo">CSS3</p>
+                        </div>
+                        <div class="P-child javascript">
+                            <i class="fa-brands fa-js-square"></i>
+                            <p class="fonexo">JS</p>
+                        </div>
+                        <div class="P-child mysql">
+                            <img src="./image/mysql-official.svg" alt="MYSQL이미지">
+                            <p class="fonexo">MYSQL DATABASE</p>
+                        </div>
+                        <div class="P-child eclipse">
+                            <img src="./image/Eclipse-Luna-Logo.svg" alt="Eclipse이미지">
+                            <p class="fonexo">ECLIPSE LUNA</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -645,7 +747,37 @@
                     </div>
                     <div class="p-cicle p-cicle03"></div>
                 </div>
+                <div class="port port4">
+                    <div class="port-img">
+                        <img src="./image/img-hollys.jpg" alt="할리스커피 클론페이지">
+                    </div>
+                    <div class="p-write">
+                        <div class="p-text"> 
+                            <h1>HOLLYS</h1>
+                            <h2>#또 커피에요.</h2>
+                            <p>#정말 커피를 좋아하나봐요 커피 페이지만 두개에요!</p>
+                        </div>
+                        <div class="p-btn">
+                           <a href="#"><div class="goto04">바로가기</div></a>
+                           <a href="#"><div class="source04">소스보기</div></a>
+                           <a href="#"><div class="how04">이야기</div></a>
+                        </div>
+                    </div>
+                    <div class="p-cicle p-cicle04"></div>
+                </div>
             </div>
+            <!-- <div class="">
+                <div class="container">
+                    <div class=" left fonexo">
+                        <img src="./image/" alt="">
+                        <h1 class="">ABOUT ME</h1><br>
+                        <h2 class="fosank ">발전하고 싶은 신입 <span style="color: rgb(118, 255, 105);">오민혁</span> 입니다.</h2>
+                        <p class="">저의 포트폴리오를 방문해주셔서 감사합니다.<br><br> <span class="profade">의견,제안 환영합니다 필요하신분들은 방명록기능이 있으니 이용해주세요.</span></p>
+                        <a href="#" class="">방명록 바로가기-></a>
+                        <h1 class="margint center ">즐거운시간 되세요!</h1>
+                    </div>
+                </div>
+            </div> -->
         </section>
         <div class="footer">
 
@@ -657,6 +789,9 @@
         let chk01 = document.getElementById('chk01');
         let btnPopup = document.getElementById('btn-popup');
         popup();
+        // 프로필 스위치
+        let pro1 = true
+        let pro2 = true
         // 쿠키
             function setCookie(name,value,expir){
                 let date = new Date();
@@ -683,6 +818,7 @@
                 setCookie('mainPopup','hidden',1);
             }
         });
+        
         // 스크롤 이벤트
         window.addEventListener('scroll', function(){
             // 헤더 배경색 변경
@@ -692,21 +828,22 @@
             }else if(window.scrollY<40){
                 header.style.backgroundColor="#ffffff"
             };
-            // 인사말 페이드인아웃 변경
+            //프로필 인사말 페이드인아웃 변경
             let profade = document.querySelectorAll('.profade');
             setInterval(function() {
-                if(window.scrollY<200){
+                if(window.scrollY<500){
                     for(idx=0;idx<profade.length;idx++){
                         profade[idx].style.opacity="0";
                         profade[idx].style.transform = 'translate(-0%,30%)';
                     }
+                    pro1 = true
                 }return;
             },1500)
-            if(window.scrollY>200){
+            if(window.scrollY>500 && pro1 == true){
                 profade[0].style.opacity="1";
                 profade[0].style.transform = 'translate(0,0)';
             }
-            if(window.scrollY>400){
+            if(window.scrollY>700 && pro1 == true){
                 profade[1].style.opacity="1";
                 profade[1].style.transform = "translate(0,0)";
                 setTimeout(()=>{
@@ -719,13 +856,45 @@
                 profade[4].style.opacity="1";
                 profade[4].style.transform = "translate(0,0)";},1100);
             }
-            if(window.scrollY>650){
+            if(window.scrollY>900 && pro1 == true){
                 profade[5].style.opacity="1";
                 profade[5].style.transform = "translate(0,0)";
+                pro1 = false
             }
+            //프로필2 소개글 페이드인아웃 변경
+            if(window.scrollY<1000 && pro2 == false){
+                let intTxt = document.querySelectorAll('.int_txt');
+                document.querySelector('.int_img').style.opacity="0";
+                for(idx=0;idx<intTxt.length;idx++){
+                    intTxt[idx].style.opacity="0";
+                    intTxt[idx].style.transform = "translate(-10%,0)";
+                }
+                pro2 = true
+            }
+            if(window.scrollY>1100 && pro2 == true){
+                let intTxt = document.querySelectorAll('.int_txt');
+                document.querySelector('.int_img').style.opacity="1";
+                intTxt[0].style.opacity="1";
+                intTxt[0].style.transform = "translate(0,0)";
+                setTimeout(()=>{
+                    intTxt[1].style.opacity="1";
+                    intTxt[1].style.transform = "translate(0,0)";},300);
+                setTimeout(()=>{
+                    intTxt[2].style.opacity="1";
+                    intTxt[2].style.transform = "translate(0,0)";},600);
+                setTimeout(()=>{
+                    intTxt[3].style.opacity="1";
+                    intTxt[3].style.transform = "translate(0,0)";},900);
+                setTimeout(()=>{
+                    intTxt[4].style.opacity="1";
+                    intTxt[4].style.transform = "translate(0,0)";},1200);
+                pro2 = false
+                console.log(pro2);
+            }
+            
             // 포트폴리오 인사말
             let space = document.querySelectorAll('.spa_h')
-            if(window.scrollY>1200){
+            if(window.scrollY>1500){
                 space[0].classList.add('spa_active');
                 setTimeout(()=>{
                     space[1].classList.add('spa_active');
@@ -743,7 +912,7 @@
                 slide[1].classList.add('active')
             }else if(slideNum==2){
                 slide[2].classList.add('active')
-            }else{alert('이 메세지는 오류입니다 아마 아무도 못보겠죠 ㅎㅎ')}
+            }else{alert('오류 이 메세지는 아마 아무도 못보겠죠 ㅎㅎ')}
         }
         function sliprev(){
             for(idx=0;idx<slide.length;idx++){
@@ -763,7 +932,6 @@
             }else{slideNum=0}
             CheckSl()
         }
-        
         
         function HardWork(){
 
