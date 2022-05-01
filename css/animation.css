@@ -11,3 +11,9 @@
     0%{box-shadow:0 0 0 #000;}
     100%{box-shadow:0 0 10px #000;}
 }
+
+/* 글자 박스쉐도우 */
+@keyframes font-ani{
+    0%{text-shadow: 0 0 0 #fff;}
+    100%{text-shadow: 2 2 2px #fff;}
+}
