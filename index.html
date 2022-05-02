@@ -6,583 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="오민혁 포트폴리오">
     <meta name="keywords" content="포트폴리오,웹포트폴리오,웹퍼블리셔,웹개발자">  
-    <title>Oh's PortFolio</title>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/animation.css">
+    <title>Oh's PortFolio/오민혁 포트폴리오</title>
     <!-- 폰트 엄청난 -->
     <script src="https://kit.fontawesome.com/da49fd3603.js" crossorigin="anonymous"></script>
-    <style>
-        /* 폰트 */
-        @import url('https://fonts.googleapis.com/css2?family=Ms+Madi&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Tapestry&display=swap');        /* 기본 스타일 */
-        @font-face {
-            font-family: 'NEXON Lv1 Gothic OTF Bold';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Bold.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-        /* 공용워크벤치 */
-        :root{
-            color: rgb(133,133,133);
-            font-family: 'Noto Sans KR', sans-serif;
-        }
-        .relative{
-            position: relative;
-        }
-        .absolute{
-            position: absolute;
-        }
-        .left{
-            left:0;
-            float: left;
-        }
-        .center{
-            text-align: center;
-            align-items: center;
-            justify-content: center;
-        }
-        .right{
-            right: 0;
-            float: right;
-        }
-        .margint{
-            margin-top: 50px;
-        }
-        .dis-none{
-            display: none;
-        }
-        .wrap{
-            width: 100%;
-            overflow: hidden;
-        }
-        /* 기본스타일 */
-        img{
-            width: 100%;
-            box-sizing: border-box;
-        }
-        .wrap{
-            margin: 0 auto;
-        }
-        .skip-menu{
-            position: relative;
-        }
-        .skip-menu ul li a{
-            position: absolute;
-            border: 10px solid #000;
-            text-decoration: none; 
-            font-size: 20px;
-            font-weight: 700;
-            color: #000000;
-            left: -9999px;
-        }
-        .skip-menu ul li a:focus{
-            font-size: 24px;
-            z-index: 2000;
-            left: 0;
-        }
-        video{
-            width: 100%;
-            height: 100%;
-            transition: 0.3s;
-            filter: brightness(0.7);
-            transform: translateY(-20%) scale(1.5);
-        }
-        /* 폰트 */
-        .fomadi{
-            font-family: 'Ms Madi', sans-serif;
-            font-weight: 700;
-            font-size: 1.3em;
-            text-shadow: 1px 1px 2px #000;
-            letter-spacing: 0.2em;
-        }
-        .fosank{
-            font-family: 'Noto Sans KR', sans-serif;
-        }
-        .fotape{
-            font-family: 'Tapestry', cursive;
-            font-weight: 700;
-            font-size: 1.3em;
-            text-shadow: 1px 1px 2px #000;
-            letter-spacing: 0.4em;
-        }
-        .fonexo{
-            font-family:'NEXON Lv1 Gothic OTF Bold',sans-serif;
-        }
-        /* 팝업 */
-        .Start{
-            position: fixed;
-            width:60%;
-            height: 60%;
-            max-width: 600px;
-            min-height: 550px;
-            z-index: 2000;
-            opacity: 0;
-            border: 2px solid #000;
-            border-radius: 5%;
-
-            text-align: center;
-            color: #000;
-
-            background: linear-gradient(137deg, #40DFEF, #B9F8D3, #FFFBE7, #E78EA9);
-            background-size: 800% 800%;
-            animation: Start 8s ease infinite;
-            
-            transform: translate(-50%,-50%);
-            transition: 2s ease-out;
-            top: 50%;
-            left: 50%;
-        }
-        
-        .img-box{
-            position: relative;
-            border-radius: 50%;
-            width: 300px;
-            height: 300px;
-            margin: 40px auto;
-            overflow: hidden;
-        }
-        .img-box img{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%) scale(2);
-        }
-        .Start h2{
-            font-size: 1.5em;
-            margin-bottom: 15px;
-        }
-        .Start p{
-            padding-top: 30px 0;
-        }
-        .Start p a{
-            font-size: 1.2em;
-            font-weight: 400;
-        }
-        .Start label{
-            position: absolute;
-            cursor: pointer;
-            bottom: 10%;
-        }
-        .Start input[type="checkbox"]{
-            width: 2em;
-            height: 2em;
-            border: 4px solid #000;
-            -webkit-appearance: none;
-            cursor: pointer;
-            appearance: none;
-        }
-        .Start input[type="checkbox"]:checked{
-            background-color: #333 ;
-        }
-        #btn-popup{
-            position: absolute;
-            bottom: 10%;
-            right: 15%;
-            cursor: pointer;
-            font-size: 2em;
-            border-radius: 5px;
-        }
-        /* 헤더 스타일 */
-        .header {
-            z-index: 1000;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: 90px;
-            transition: 0.5s;
-            background-image: url(data:image/png;base64,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);
-            background-color: #ffffff;
-        }
-        .header .logo{
-            position: fixed;
-            display: flex;
-            margin: 25px 0 25px 60px;
-        }
-        .header .logo a{
-            width: 40px;
-            margin-right: 20px;
-        }
-        .header .svg{
-            width: 100%;
-            transition: 0.5s;
-            fill:rgb(133,133,133,0.8);
-        }
-        .header .svg:hover{
-            fill: #000;
-        }
-        .nav ul{
-            display:flex;
-            margin: auto 0;
-            padding: 15px 0;
-            font-family: 'Tapestry', sans-serif;
-        }
-        .nav ul li{
-            float: right;
-            margin-top: 20px;
-            color: rgb(133,133,133);
-        }
-        .nav ul li a{
-            padding: 20px 20px;
-        }
-        .nav ul li a:hover{
-            border-bottom: 2px solid rgb(133,133,133);
-            color: #000;
-        }
-        /* 슬라이드 스타일 */
-        .slidebox{
-            position: relative;
-            width:100%;
-            height: 100vh;
-            margin-top: 40px;
-            background-color: #000;
-            overflow: hidden;
-        }
-        .slide{
-            position: absolute;
-            width: 100%;
-            height: 100vh;
-            left: 50%;
-            top: 50%;
-            z-index: -1;
-            opacity: 0;
-            transition: 1s;
-            transform: translate(-50%,-50%);
-        }
-        .slide img{
-            width: 80%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            filter: grayscale(0.7);
-            transform: translate(-50%,-50%);
-        }
-        .sli_img01{
-            filter: grayscale(1);
-        }
-        .active{
-            opacity: 1;
-            z-index: 50;
-        }
-        .left_btn,.right_btn{
-            z-index: 100;
-            top: 50%;
-            position: absolute;
-            width: 2%;
-            cursor: pointer;
-            opacity: 0.6;
-            transition: 0.3s;
-            border: 4px solid #000;
-            border-radius: 50%;
-            background-color: rgba(255,255,255,1);
-        }
-        .left_btn:hover,.right_btn:hover{
-            opacity: 1;
-        }
-        .left_btn{
-            left: 1%;
-            transform: rotate(180deg) translateY(50%);
-        }
-        .right_btn{
-            left: 96%;
-        }
-        .sli_tit{
-            position: absolute;
-            flex-flow: column;
-            display: flex;
-            width: 60%;
-            height: 100%;
-            top: 50%;
-            left: 50%;
-
-            text-align: center;
-            justify-content: center;
-            color: #fff;
-            transition: 1s;
-            transform: translate(-50%,-50%);
-            background-color: rgba(133,133,133,0.2);
-        }
-        .sli_tit:hover{
-            background-color: rgba(133,133,133,0.0);
-        }
-        .sli_h1{
-            font-size: 3em;
-            text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
-        }
-        .sli_text{
-            margin-top: 1.2em;
-            font-size: 2.5em;
-            font-weight: 400;
-            text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
-        }
-        .pro-box{
-            width: 100%;
-            height: 100vh;
-            background-color: #000;
-        }
-
-        /* 섹션1(프로필) 스타일 */
-        .profile01{
-            display: flex;
-            /* width: 100%;
-            height: 520px; */
-            background-color: #000;
-        }
-        .profile01 .container{
-            display: flex;
-            width: 80%;
-            margin: 50px auto;
-        }
-        /* 인사말 */
-        .profile{
-            width: 100%;
-            color: #fff;
-            font-size: 24px;
-        }
-        .profile p{
-            margin: 50px 0 100px 0;
-            color: rgb(133,133,133);
-        }
-        .profade{
-            opacity: 0;
-            transition: 0.3s ease-out;
-            transform: translate(-0%,30%);
-        }
-        /* 프로필사진 및 소개 */
-        .profile01-1{
-            width: 100%;
-        }
-        .profile01-1 .container{
-            display: flex;
-            width: 80%;
-            margin: 0 auto;
-            flex-flow: row;
-        }
-        .int_box{
-            display: flex;
-        }
-        .int_img{
-            width: 20%;
-            overflow: hidden;
-            opacity: 0;
-            transition: 1.2s;
-        }
-        .int_img img{
-            transform: scale(1.5);
-            width: 100%;
-            filter: grayscale(1);
-        }
-        .int_img img:hover{
-            filter: grayscale(0);
-        }
-        .int_txtbox{
-            width: 80%;
-        }
-        .int_tit{
-            opacity: 0.5;
-            height:21%;
-            padding-left: 5%;
-            font-size: 2em; 
-            color: #fff;
-        }
-        .int_txt{
-            height: 13.5%;
-            margin: 1% 0 1% 10%;
-            font-size: 1.2em;
-            color: rgb(133,133,133);
-            opacity: 0;
-
-            transform: translateX(-10%);
-            transition: 0.3s;
-        }
-        .int_txt:hover h2{
-            animation: font-ani 0.5s ease infinite alternate;
-        }
-        .int_txt p{
-            font-size: 1.0em;
-            transform: translateY(-1em);
-            opacity: 0;
-            transition: 0.5s;
-            color: #fff;
-        }
-        .int_txt:hover p{
-            transform: translateY(0.5em);
-            opacity: 1;
-        }
-        .int_txt:last-child{
-            height: 25%;
-        }
-        .resume{
-            padding: 3px;
-            border: 2px solid #fff;
-            border-radius: 4px;
-            transition: 0.5s;
-        }
-        .int_txt .resume:hover{
-            padding:10px;
-        }
-        /* 섹션2 (스킬) 스타일 */
-        .skill_box{
-            background-color: #000;
-            padding-bottom: 5%;
-        }
-        .skills{
-            width: 95%;
-            height: 460px;
-            margin: 0 auto;
-            padding: 20px 0;
-            border-bottom: 2px solid rgb(133,133,133);
-            background-color: #000;
-            background-color: rgba(255, 251, 231,0.9);
-        }
-        .skills h2{
-            margin: 0 auto 20px auto;
-            width: 40%;
-            height: 20%;
-            border-radius: 50%;
-            padding-top: 3%;
-            font-size: 40px;
-            text-align: center;
-            color: #B9F8D3;
-        }
-        .P-box{
-            display:flex;
-            height: 50%;
-            font-size: 10em;
-            color: #40DFEF;
-            justify-content: center;
-            align-items: center;
-            justify-content: space-around;
-        }
-        .P-child{
-            width: 15%;
-            height: 250px;
-            padding: 0 3%;
-            border: 2px solid rgb(133,133,133);
-            border-radius: 5px;
-            text-align: center;
-        }
-        .P-child:hover{
-            animation: skills-ani 0.5s ease infinite alternate;
-        }
-        .P-child p{
-            margin-top: 1em;
-            font-size: 28px;
-            color: #000;
-        }
-        /* 포트폴리오 스타일 */
-        .space{
-            display: flex;
-            flex-flow: column;
-            justify-content: center;
-
-            width: 100%;
-            height: 300px;
-            margin: 0 auto;
-            background: linear-gradient(to bottom,rgb(133,133,133),#fff);
-
-            font-size: 1.5em;
-            color: #000;
-            line-height: 3;
-        }
-        .spa_h{
-            position: absolute;
-            left: -20%;
-            opacity: 0;
-            transition: 0.8s ease-out;
-            font-size: 1.4em;
-        }
-        .spa_h:last-child{
-            transform: translateY(60px);
-        }
-        .spa_active{
-            left: 10%;
-            opacity: 1;
-        }
-        .portFoliobox{
-            width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        .port{
-            height: 400px;
-            padding: 4px;
-            position: relative;
-            display: flex;
-            border:2px solid #000;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        .port-img img{
-            width: 100%;
-        }
-        .p-write{
-            width: 50%;
-            font-family:'NEXON Lv1 Gothic OTF Bold',sans-serif;
-            font-size: 1.5em;
-            line-height: 2;
-            padding: 15px;
-        }
-        .p-cicle {
-            position: absolute;
-            right: -27%;
-            bottom: -84%;
-            width: 800px;
-            height: 600px;
-            z-index: -100;
-            background-color: #F8ECD1;
-            border-radius: 50%;
-        }
-        .p-btn{
-            width: 25%;
-            display: flex;
-            flex-flow: column;
-            justify-content: space-between;
-        }
-        .port,.p-btn{
-            height: 50%;
-        }
-        .p-btn div{
-            text-align: center;
-            color: rgb(133,133,133);
-            border: 2px solid #000;
-            border-radius: 4px;
-        }
-        .p-btn div:hover{
-            color: #000;
-        }
-        .port01 h1{
-            color: #85586F;
-        }
-        .port01 h2{
-            color:#AC7D88 ;
-        }
-        .port01 p{
-            color:#DEB6AB ;
-        }
-        .port02 h1{
-            color: #1C0C5B;
-        }
-        .port02 h2{
-            color:#3D2C8D ;
-        }
-        .port02 p{
-            color:#916BBF ;
-        }
-        .p-cicle02{
-            background-color: #C996CC;
-        }
-        .port03 h1{
-            color: #630606;
-        }
-        .port03 h2{
-            color:#890F0D ;
-        }
-        .port03 p{
-            color:#E83A14 ;
-        }
-        .p-cicle03{
-            background-color: #D9CE3F;
-        }
-    </style>
+    <!-- css리셋 -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- 직접만든 애니메이션 효과 -->
+    <link rel="stylesheet" href="./css/animation.css">
+    <!-- 기본 스타일 -->
+    <link rel="stylesheet" href="/css/default.css">
+    <!-- 문서 스타일 -->
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
     <div class="skip-menu">
@@ -685,7 +119,7 @@
                                 </li>
                                 <li class="int_txt int_txt02">
                                     <h2 class="">2#회사의 발전을 좋아하는사람</h2>
-                                    <p class="">회사도 나도 함께 성장해가고 싶어요!</p>
+                                    <p class="">회사의 발전과 함께 맞춰가고 싶습니다!</p>
                                 </li>
                                 <li class="int_txt int_txt03">
                                     <h2 class="">3#중간관리자 경험이 있는사람</h2>
@@ -742,9 +176,9 @@
                             <p>#시원한 ,#따듯한 #아메리카노 #라떼 어떤게 더 좋으신가요?</p>
                         </div>
                         <div class="p-btn">
-                           <a href="#"><div class="goto01">바로가기</div></a>
-                           <a href="#"><div class="source01" onclick="source01()">소스보기</div></a>
-                           <a href="#"><div class="how01">이야기</div></a>
+                           <a target="_blank" href="https://bonggil-tech.github.io/Paik/"><div class="goto01">바로가기</div></a>
+                           <a target="_blank" href="https://github.com/bonggil-tech/Paik"><div class="source01">소스보기</div></a>
+                           <div class="how01" onclick="Story(00)">제작이야기</div>
                         </div>
                     </div>
                     <div class="p-cicle p-cicle01"></div>
@@ -760,9 +194,9 @@
                             <p>#황정민 #최민식 둘중에 연기잘하는 배우 한명을 고르자면?</p>
                         </div>
                         <div class="p-btn">
-                           <a href="#"><div class="goto02">바로가기</div></a>
-                           <a href="#"><div class="source02">소스보기</div></a>
-                           <a href="#"><div class="how02">이야기</div></a>
+                           <a target="_blank" href="https://bonggil-tech.github.io/megabox/"><div class="goto02">바로가기</div></a>
+                           <a target="_blank" href="https://github.com/bonggil-tech/megabox"><div class="source02">소스보기</div></a>
+                           <div class="how02" onclick="Story(01)">제작이야기</div>
                         </div>
                     </div>
                     <div class="p-cicle p-cicle02"></div>
@@ -778,9 +212,9 @@
                             <p>#정말 커피를 좋아하나봐요 커피 페이지만 두개에요!</p>
                         </div>
                         <div class="p-btn">
-                           <a href="#"><div class="goto03">바로가기</div></a>
-                           <a href="#"><div class="source03">소스보기</div></a>
-                           <a href="#"><div class="how03">이야기</div></a>
+                           <a target="_blank" href="https://bonggil-tech.github.io/hollys/"><div class="goto03">바로가기</div></a>
+                           <a target="_blank" href="https://github.com/bonggil-tech/hollys"><div class="source03">소스보기</div></a>
+                           <div class="how03" onclick="Story(02)">제작이야기</div>
                         </div>
                     </div>
                     <div class="p-cicle p-cicle03"></div>
@@ -796,9 +230,9 @@
                             <p>#정말 커피를 좋아하나봐요 커피 페이지만 두개에요!</p>
                         </div>
                         <div class="p-btn">
-                           <a href="#"><div class="goto04">바로가기</div></a>
-                           <a href="#"><div class="source04">소스보기</div></a>
-                           <a href="#"><div class="how04">이야기</div></a>
+                           <a target="_blank" href="#"><div class="goto04">바로가기</div></a>
+                           <a target="_blank" href="#"><div class="source04">소스보기</div></a>
+                           <div class="how04" onclick="Story(03)">제작이야기</div>
                         </div>
                     </div>
                     <div class="p-cicle p-cicle04"></div>
@@ -816,12 +250,127 @@
                     </div>
                 </div>
             </div> -->
+            <div class="Story_bg" onclick="Stclosebg(this)">
+                <div class="Story">
+                    <div class="St_wrap">
+                        <section>
+                            <div class="St_header">
+                                <h1>Oh's</h1>
+                                <h2>이렇게 만들었어요</h2>
+                                <i class="St_close fa-solid fa-circle-xmark" onclick="Stclose(this)"></i>
+                            </div>
+                            <div class="St_content">
+                                <div class="St_img">
+                                    <a target="_blank" href="https://bonggil-tech.github.io/Paik/"><img src="./image/paik-1.png" alt="빽다방화면"></a>
+                                </div>
+                                <div class="St_txt fonexo">
+                                    <h1>빽다방 홈페이지</h1>
+                                    <p>리뉴얼하기에 앞서 적용된 몇가지 기술들을 살펴 봤어요.
+                                        <br>1.우선 원본홈페이지가 반응형인게 너무 마음에 들었구요
+                                        <br>2.슬라이드와 각종 효과들을 추가하면 어떨까 생각해봤습니다.
+                                        <br>3.바로 제이쿼리와 bx슬라이더 플러그인을 사용해서 작업을 했고
+                                        <br>4.메뉴는 페이지안에 코드를전부 적어둔게 아닌 외부파일에서 데이터를 불러와 표시하는 식으로 구현해봤습니다.
+                                        <br>5.마지막은 미디어쿼리를 사용하여 여러 디스플레이마다 표시되는게 다르도록하여 마무리하였습니다.
+                                        <br>지금 한번 확인해보세요!
+                                    </p>
+                                    <a target="_blank" href="https://bonggil-tech.github.io/Paik/"><div class="goto01">바로가기</div></a>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="Story">
+                <div class="St_wrap">
+                    <section>
+                        <div class="St_header">
+                            <h1>Oh's</h1>
+                            <h2>이렇게 만들었어요</h2>
+                            <i class="St_close fa-solid fa-circle-xmark" onclick="Stclose(this)"></i>
+                        </div>
+                        <div class="St_content">
+                            <div class="St_img">
+                                <a target="_blank" href="https://bonggil-tech.github.io/megabox/"><img src="./image/img-megabox.jpg" alt="메가박스화면"></a>
+                            </div>
+                            <div class="St_txt fonexo">
+                                <h1>메가박스 홈페이지</h1>
+                                <p>메가박스 홈페이지를 봤는데 반응형이 아니더라구요
+                                    <br>1.그래서 반응형으로 리뉴얼했습니다!
+                                    <br>2.모바일 로그인창도 좀 아쉬워서 새로 만들어봤습니다.
+                                    <br>3.제이쿼리와 바닐라 자바스크립트를 같이사용해 작업해봤습니다.
+                                    <br>4.원본 메가박스랑 비교해서보면 더 좋아요! <a target="_blank" href="https://www.megabox.co.kr/"><span>진짜 메가박스</span></a>
+                                    <br>5.코드 뜯어보기 환영합니다!
+                                    <br>지금 한번 확인해보세요!
+                                </p>
+                                <a target="_blank" href="https://bonggil-tech.github.io/megabox/"><div>바로가기</div></a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="Story">
+                <div class="St_wrap">
+                    <section>
+                        <div class="St_header">
+                            <h1>Oh's</h1>
+                            <h2>이렇게 만들었어요</h2>
+                            <i class="St_close fa-solid fa-circle-xmark" onclick="Stclose(this)"></i>
+                        </div>
+                        <div class="St_content">
+                            <div class="St_img">
+                                <a target="_blank" href="https://bonggil-tech.github.io/megabox/"><img src="./image/img-megabox.jpg" alt="메가박스화면"></a>
+                            </div>
+                            <div class="St_txt fonexo">
+                                <h1>할리스 커피</h1>
+                                <p>할리스 커피 
+                                    <br>1.그래서 반응형으로 리뉴얼했습니다!
+                                    <br>2.모바일 로그인창도 좀 아쉬워서 새로 만들어봤습니다.
+                                    <br>3.제이쿼리와 바닐라 자바스크립트를 같이사용해 작업해봤습니다.
+                                    <br>4.원본 메가박스랑 비교해서보면 더 좋아요! <a target="_blank" href="https://www.megabox.co.kr/"><span>진짜 메가박스</span></a>
+                                    <br>5.코드 뜯어보기 환영합니다!
+                                    <br>지금 한번 확인해보세요!
+                                </p>
+                                <a target="_blank" href="https://bonggil-tech.github.io/megabox/"><div>바로가기</div></a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="Story">
+                <div class="St_wrap">
+                    <section>
+                        <div class="St_header">
+                            <h1>Oh's</h1>
+                            <h2>이렇게 만들었어요</h2>
+                            <i class="St_close fa-solid fa-circle-xmark" onclick="Stclose(this)"></i>
+                        </div>
+                        <div class="St_content">
+                            <div class="St_img">
+                                <a target="_blank" href="https://bonggil-tech.github.io/megabox/"><img src="./image/img-megabox.jpg" alt="메가박스화면"></a>
+                            </div>
+                            <div class="St_txt fonexo">
+                                <h1>메가박스 홈페이지</h1>
+                                <p>메가박스 홈페이지를 봤는데 반응형이 아니더라구요
+                                    <br>1.그래서 반응형으로 리뉴얼했습니다!
+                                    <br>2.모바일 로그인창도 좀 아쉬워서 새로 만들어봤습니다.
+                                    <br>3.제이쿼리와 바닐라 자바스크립트를 같이사용해 작업해봤습니다.
+                                    <br>4.원본 메가박스랑 비교해서보면 더 좋아요! <a target="_blank" href="https://www.megabox.co.kr/"><span>진짜 메가박스</span></a>
+                                    <br>5.코드 뜯어보기 환영합니다!
+                                    <br>지금 한번 확인해보세요!
+                                </p>
+                                <a target="_blank" href="https://bonggil-tech.github.io/megabox/"><div>바로가기</div></a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div> -->
         </section>
         <div class="footer">
 
         </div>
     </div>
     <script>
+        // 비슷한 동작이더라도 일부러 여러 방법을 사용해봤습니다.
         // 팝업이벤트
         let popEl = document.getElementById('Start');
         let chk01 = document.getElementById('chk01');
@@ -832,31 +381,37 @@
         let pro2 = false
         // 쿠키
             function setCookie(name,value,expir){
+                                // 쿠키 값에 만료기한 날짜 저장
                 let date = new Date();
                 date.setDate(date.getDate() + expir);
                 document.cookie = name + '=' + value + ';expires=' + date +';path=/;';
             }
-            function getCookie(name) { 
+            function getCookie(name) {
+                        // 활성화된 쿠키값이있는지 확인후 팝업호출여부 전송
                 let value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
                 return value? value[2] : null;
             }
         // 팝업 보이기/감추기
         function popup(){
+                        // 스크립트우선순위를위해 딜레이100티켓 지정
             setTimeout(function() {
                 popEl.style.opacity="1";
             }, 100);
+                        // 팝업호출사인 받을시 팝업표시
             if(getCookie('mainPopup')!=='hidden'){
                 popEl.classList.remove('dis-none');
             }
         }
         // 팝업닫기
         btnPopup.addEventListener('click',()=>{
+                    //이벤트리스너로 클릭감지시 팝업제거후 쿠키저장여부 확인,
             popEl.classList.add('dis-none');
             if(chk01.checked){
                 setCookie('mainPopup','hidden',1);
             }
         });
         
+        //앞으로의 스크립트는 스타일과 효과를위한부분입니다. 동작이 복잡하지 않을시 주석을 생략하겠습니다.
         // 스크롤 이벤트
         window.addEventListener('scroll', function(){
             // 헤더 배경색 변경
@@ -870,6 +425,9 @@
             let profade = document.querySelectorAll('.profade');
             setInterval(function() {
                 if(window.scrollY<500){
+                    // for문으로 문서수가 얼마나 많은지 상관없이 자동호출
+                    // pro1,2스위치 재조정,
+                    // 인터벌을 사용하여 페이지가 넘어갔을때 오동작방지
                     for(idx=0;idx<profade.length;idx++){
                         profade[idx].style.opacity="0";
                         profade[idx].style.transform = 'translate(-0%,30%)';
@@ -878,6 +436,7 @@
                     pro2 = false;
                 }return;
             },1500)
+                    // 하드코딩
             if(window.scrollY>500 && pro1 == true){
                 profade[0].style.opacity="1";
                 profade[0].style.transform = 'translate(0,0)';
@@ -899,6 +458,7 @@
             }
             //프로필2 소개글 페이드인아웃 변경
             if(window.scrollY<1000 && pro2 == false){
+                //인터벌을 사용하지않고 pro2 불린값을 사용하여 오동작방지
                 let intTxt = document.querySelectorAll('.int_txt');
                 document.querySelector('.int_img').style.opacity="0";
                 document.querySelector('.int_tit').style.opacity="0.5";
@@ -909,6 +469,7 @@
                 }
             }
             if(window.scrollY>1000 && pro2 == true){
+                //pro2값이 false가 되기전까진 무조건실행
                 let intTxt = document.querySelectorAll('.int_txt');
                 document.querySelector('.int_img').style.opacity="1";
                 document.querySelector('.int_tit').style.opacity="1";
@@ -925,8 +486,8 @@
                     intTxt[3].style.transform = "translate(0,0)";},900);
                 setTimeout(()=>{
                     intTxt[4].style.opacity="1";
-                    intTxt[4].style.transform = "translate(0,0)";},1200);
-                pro2 = false
+                    intTxt[4].style.transform = "translate(0,0)";
+                    pro2 = false},1200);
                 console.log(pro2);
             }
             
@@ -975,9 +536,20 @@
         function HardWork(){
 
         }
-        // 포트폴리오 소스보기
-        function source01(){
-
+        // 포트폴리오 이야기 열기
+        function Story(number){
+            // 전달받은 함수값에따라 표시할내용 변경
+            let Story = document.querySelectorAll('.Story_bg')
+            Story[number].style.display="flex";
+        }
+        // 포트폴리오 이야기 닫기
+        function Stclose(self){
+            // self에 담긴값의 부모요소를찾아 닫기
+            let target = self.closest('.Story_bg')
+                target.style.display="none";
+        }
+        function Stclosebg(self){
+            self.style.display="none";
         }
     </script>
 </body>
