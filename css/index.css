@@ -94,8 +94,6 @@
 /* 섹션1(프로필) 스타일 */
 .profile01{
     display: flex;
-    /* width: 100%;
-    height: 520px; */
     background-color: #000;
 }
 .profile01 .container{
@@ -192,18 +190,16 @@
     padding:10px;
 }
 /* 섹션2 (스킬) 스타일 */
+.grad{
+    background: linear-gradient(to bottom,rgb(133,133,133),rgba(255, 251, 231,0.9));
+}
 .skill_box{
-    background-color: #000;
-    padding-bottom: 5%;
+    background-color: rgba(255, 251, 231,0.9);
 }
 .skills{
     width: 95%;
-    height: 460px;
     margin: 0 auto;
     padding: 20px 0;
-    border-bottom: 2px solid rgb(133,133,133);
-    background-color: #000;
-    background-color: rgba(255, 251, 231,0.9);
 }
 .skills h2{
     margin: 0 auto 20px auto;
@@ -220,17 +216,59 @@
     height: 50%;
     font-size: 10em;
     color: #40DFEF;
-    justify-content: center;
     align-items: center;
     justify-content: space-around;
 }
+.P-box2{
+    display:flex;
+    height: 50%;
+    font-size: 10em;
+    color: #40DFEF;
+    justify-content: center;
+    align-items: center;
+}
 .P-child{
-    width: 15%;
-    height: 250px;
+    width:15%;
     padding: 0 3%;
-    border: 2px solid rgb(133,133,133);
     border-radius: 5px;
     text-align: center;
+}
+.P-tools{
+    position: relative;
+    width: 5%;
+    padding: 5%;
+}
+.card-front,.card-back{
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    transition:0.5s;
+    backface-visibility:hidden;
+    overflow:hidden;
+    display:flex;
+    flex-flow:column nowrap;
+    justify-content: center;
+    align-items:flex-start;
+}
+.card-front{     
+    font-size: 100%; 
+    transform:perspective(500px) rotateY(0deg);
+    align-items:center;
+}
+.P-tools:hover .card-front{
+    transform:rotateY(180deg);
+}
+.card-back{
+    align-items: center;
+    font-size: 28px;
+    text-align: center;
+    color: #000;
+    transform:perspective(500px) rotateY(-180deg);      
+}
+.P-tools:hover .card-back{
+    transform:rotateY(0deg);
 }
 .P-child:hover{
     animation: skills-ani 0.5s ease infinite alternate;
@@ -249,7 +287,6 @@
     width: 100%;
     height: 300px;
     margin: 0 auto;
-    background: linear-gradient(to bottom,rgb(133,133,133),#fff);
 
     font-size: 1.5em;
     color: #000;
@@ -285,7 +322,7 @@
     overflow: hidden;
 }
 .port-img img{
-    width: 100%;
+    width: 600px
 }
 .p-write{
     width: 50%;
