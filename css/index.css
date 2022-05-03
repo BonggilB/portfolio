@@ -24,7 +24,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    filter: grayscale(0.7);
+    filter: grayscale(1);
     transform: translate(-50%,-50%);
 }
 .sli_img01{
@@ -276,6 +276,7 @@
 }
 .port{
     height: 400px;
+    min-width: 1200px;
     padding: 4px;
     position: relative;
     display: flex;
@@ -369,11 +370,12 @@
     background-color: rgba(0,0,0,0.4);
 }
 .Story{
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 80%;
+    min-width: 600px;
     max-width: 1000px;
     min-height: 500px;
     max-height: 800px;
@@ -386,7 +388,7 @@
     display: flex;
     width: 100%;
 }
-.St_wrap section{
+.St_inner{
     width: 100%;
 }
 /* 제작이야기 헤더 */
@@ -425,21 +427,25 @@
     width: 90%;
     overflow: hidden;
 }
-.St_img{
-    width: 400px;
-    height: 400px;
+.St_content h1{
+    font-size: 1.5em;
+    margin: 20px auto;
 }
-.St_txt{
-    text-align: center;
-    width: calc(50%);
+.St_left , .St_right{
+    width: 50%;
+    height: 400px;
     margin: 0 5px;
+    text-align: center;
     line-height: 2em;
     color: #000;
 }
-.St_txt a{
+.goto{
+    text-align: center;
+    margin: 0 auto;
     padding: 20px;
+    font-size: 1.5em;
     color:rgb(133,133,133)
 }
-.St_txt a:hover{
+.goto:hover{
     color: #000;
 }
