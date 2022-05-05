@@ -486,3 +486,14 @@
 .goto:hover{
     color: #000;
 }
+/* 140시간 근무일지 */
+.hard_content{
+    display: flex;
+    margin:5% auto;
+    width: 90%;
+    overflow: hidden;
+}
+.opa0{
+    opacity: 0;
+    transition: 1s;
+}

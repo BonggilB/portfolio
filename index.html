@@ -81,8 +81,8 @@
                         </div>
                     </a>
                 </div>
-                <div class="slide slide03">
-                    <a href="#" class="video" onClick='HardWork()'>
+                <div onclick="Story(04)" class="slide slide03">
+                    <div >
                         <img src="./image/HardWorking.jpg" alt="과거근무 사진" class="videoimg">
                         <div class="sli_tit">
                             <h1 class="sli_h1 fonexo">주 140시간 근무 생존 경험有</h1>
@@ -91,7 +91,7 @@
                         <div class="hardwork popup">
 
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <div class="right_btn" onclick="slinext()"><img src="./image/Next.svg" alt="다음"></div>
             </div>
@@ -146,19 +146,19 @@
                 <div class="skills">
                     <h2 class="fotape">I LIKE IT</h2>
                     <div class="P-box">
-                        <div class="P-child css3">
+                        <div class="P-child css3" title="CSS3">
                             <i class="fa-brands fa-css3-alt"></i>
                             <p class="fonexo">CSS3</p>
                         </div>
-                        <div class="P-child javascript">
+                        <div class="P-child javascript" title="javascript">
                             <i class="fa-brands fa-js-square"></i>
                             <p class="fonexo">JS</p>
                         </div>
-                        <div class="P-child mysql">
+                        <div class="P-child mysql" title="MySQL">
                             <img src="./image/mysql-official.svg" alt="MYSQL이미지">
                             <p class="fonexo">MYSQL DATABASE</p>
                         </div>
-                        <div class="P-child eclipse">
+                        <div class="P-child eclipse" title="이클립스 LUNA">
                             <img src="./image/Eclipse-Luna-Logo.svg" alt="Eclipse이미지">
                             <p class="fonexo">ECLIPSE LUNA</p>
                         </div>
@@ -287,6 +287,9 @@
                     <div class="p-cicle p-cicle04"></div>
                 </div>
             </div>
+
+            <!-- 이야기 -->
+
             <!-- 빽다방 -->
             <div class="Story_bg">
                 <div class="Story">
@@ -399,7 +402,32 @@
                             </div>
                             <div class="St_content">
                                 <div class="St_left">
-                                    <a target="_blank" href=https://bonggil-tech.github.io/hollys/"><img src="./image/img-hollys.jpg" alt="할리스화면"></a>
+                                    <a target="_blank" href="https://bonggil-tech.github.io/hollys/"><img src="./image/img-hollys.jpg" alt="할리스화면"></a>
+                                </div>
+                                <div class="St_right fonexo">
+                                    <h1>할리스 커피</h1>
+                                    <p>슬라이드 사용하여
+                                        <br>퍼블리싱에 초점을 두고 작업했습니다.
+                                    </p>
+                                </div>
+                            </div>
+                            <a class="goto" target="_blank" href="https://bonggil-tech.github.io/hollys/" onclick="Stclose(this)"><p>바로가기</p></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 백엔드 -->
+            <div class="Story_bg">
+                <div class="Story">
+                    <div class="St_wrap">
+                        <div class="St_inner">
+                            <div class="St_header">
+                                <h1>Oh's</h1>
+                                <i class="St_close fa-solid fa-circle-xmark" onclick="Stclose(this)"></i>
+                            </div>
+                            <div class="St_content">
+                                <div class="St_left">
+                                    <a target="_blank" href="https://bonggil-tech.github.io/hollys/"><img src="./image/img-hollys.jpg" alt="할리스화면"></a>
                                 </div>
                                 <div class="St_right fonexo">
                                     <h1>할리스 커피</h1>
@@ -415,7 +443,9 @@
             </div>
         </section>
         <div class="footer">
-
+            <div class="container">
+                <a href="./index.html"><svg class="svg" xmlns="http://www.w3.org/2000/svg" width="40" height="40" xml:space="preserve"><text transform="translate(6.981 24.092)" fill="#FFF" font-family="'Roboto-Regular'" font-size="14px">Oh’s</text><circle stroke="#000" stroke-miterlimit="10" cx="20" cy="20" r="19"/><text transform="translate(6.981 24.092)" fill="#D3D2D2" font-family="'Roboto-Regular'" font-size="14">Oh’s</text></svg></a>
+            </div>
         </div>
     </div>
     <script>
@@ -582,10 +612,6 @@
             CheckSl()
         }
         
-        // 140시간근무 생존기록
-        function HardWork(){
-
-        }
         // 포트폴리오 이야기 열기
         function Story(number){
             // 전달받은 함수값에따라 표시할내용 변경

@@ -214,3 +214,21 @@ video{
     border-bottom: 2px solid rgb(133,133,133);
     color: #000;
 }
+/* 푸터 스타일 */
+.footer{
+    width: 100%;
+    height: 50px;
+    margin-top: 200px;
+    background-color: #000;
+}
+.footer .container{
+    display: flex;
+    color: #aaa;
+    font-style: italic;
+    justify-content: space-between;
+    text-align: center;
+}
+.footer .container p {
+    margin: auto;
+    padding: auto;
+}
