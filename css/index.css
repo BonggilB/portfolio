@@ -395,6 +395,30 @@
 .p-cicle03{
     background-color: #D9CE3F;
 }
+.port04 h1{
+    color: #284D79;
+}
+.port04 h2{
+    color:#6D94C4 ;
+}
+.port04 p{
+    color:#ACBFC5 ;
+}
+.p-cicle04{
+    background-color: #596353;
+}
+.port05 h1{
+    color: #00214A;
+}
+.port05 h2{
+    color:#0D3F7C ;
+}
+.port05 p{
+    color:#04BBEC ;
+}
+.p-cicle05{
+    background-color: #EA25B5;
+}
 /* 제작이야기 스타일 */
 .Story_bg{
     display: none;
