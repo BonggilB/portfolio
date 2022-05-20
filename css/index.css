@@ -510,8 +510,8 @@
 .goto:hover{
     color: #000;
 }
-/* 140시간 근무일지 */
-.hard_content{
+/*주 140시간 근무일지 */
+/* .hard_content{
     display: flex;
     margin:5% auto;
     width: 90%;
@@ -520,4 +520,14 @@
 .opa0{
     opacity: 0;
     transition: 1s;
+} */
+.contact{
+    width: 100%;
+    background-color: rgba(255, 251, 231, 0.9);
+    margin-top: 200px;
+    padding: 5% 0;
+}
+.contact .container{
+    width: 60%;
+    margin: 0 auto;
 }
