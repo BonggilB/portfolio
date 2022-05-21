@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="오민혁 포트폴리오">
     <meta name="keywords" content="오민혁 웹 포트폴리오, 웹 퍼블리셔, 신입 웹 퍼블리셔, 포트폴리오, 웹 포트폴리오, 웹 신입 개발자, UI, UX, 오민혁">
-    <link rel="favicon" href="./image/LOGO.svg">
+    <link rel="favicon" href="./image/favicon-16x16.png">
+    <link rel="icon" href="./image/favicon-16x16.png">
     <title>Oh's PortFolio/오민혁 포트폴리오</title>
     <!-- 폰트 엄청난 -->
     <script src="https://kit.fontawesome.com/da49fd3603.js" crossorigin="anonymous"></script>
@@ -222,7 +223,7 @@
                         <div class="p-text"> 
                             <h1>빽다방</h1>
                             <h2>#일상에 꼭필요한 커피</h2>
-                            <p>#반응형 ,#기능구현 #데이터호출</p>
+                            <p>#반응형 ,#부분기능구현 #데이터호출</p>
                             <p>#아메리카노,라떼 어떤게 더 좋으신가요?</p>
                         </div>
                         <div class="p-btn">
@@ -580,7 +581,7 @@
                             <a target="_blank" href="https://www.facebook.com/minhyeokohs"><i class="fa-brands fa-facebook"></i></a>
                             <a href="mailto:igh051@naver.com?subject=오민혁씨 포트폴리오 보고 메일남깁니다.(제목 대신적어드렸어요😉)"><i class="fa-solid fa-envelope"></i></a>
                         </p>
-                        <p>Email: <a href="#"> igh051@naver.com</a></p>
+                        <p >Email: <span onclick="CopyTo(this)"> igh051@naver.com</span></p>
                     </div>
                 </div>
             </div>
@@ -592,5 +593,68 @@
             </div>
         </footer>
     </div>
+    <!-- index.자바스크립트 -->
+    <script src="./js/index.js"></script>
+    <script>
+        // 슬라이드
+    let slide = document.querySelectorAll('.slide') ;
+    var slideNum = 0 ;
+    function CheckSl(){
+        if(slideNum==0){
+            slide[0].classList.add('active');
+        }else if(slideNum==1){
+            slide[1].classList.add('active');
+        }else if(slideNum==2){
+            slide[2].classList.add('active');
+        }else{alert('오류 이 메세지는 아마 아무도 못보겠죠 ㅎㅎ');slide.setAttribute(Array,'0')}
+    };
+    function sliprev(){
+        for(idx=0;idx<slide.length;idx++){
+            slide[idx].classList.remove('active')
+        }
+        if (slideNum>0){
+            slideNum -= 1
+        }else{slideNum=2}
+        CheckSl()
+    };
+    function slinext(){
+        for(idx=0;idx<slide.length;idx++){
+            slide[idx].classList.remove('active')
+        }
+        if (slideNum<2){
+            slideNum +=1
+        }else{slideNum=0}
+        CheckSl()
+    };
+
+    // 포트폴리오 이야기 열기
+    function Story(number){
+        // 전달받은 함수값에따라 표시할내용 변경
+        let Story = document.querySelectorAll('.Story_bg');
+        Story[number].style.display="flex";
+    };
+    // 포트폴리오 이야기 닫기
+    function Stclose(self){
+        // self 함수명으로 넘어온값의 부모요소를찾아내서 동작
+        let target = self.closest('.Story_bg');
+            target.style.display="none";
+    };
+    function Stclosebg(self){
+        self.style.display="none";
+    };
+    // 클릭시 텍스트 복사
+    function CopyTo(target) {
+
+        var Text = document.querySelector(target).innerHTML;
+        
+        navigator.clipboard.writeText(Text)
+        .then(()=>{
+            console.log('복사중입니다..')
+        })
+        document.execCommand('copy');
+
+        alert("복사됐습니다!");
+    };
+    </script>
 </body>
 </html>
