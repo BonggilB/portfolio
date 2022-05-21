@@ -528,6 +528,20 @@
     padding: 5% 0;
 }
 .contact .container{
+    display: flex;
     width: 60%;
     margin: 0 auto;
+}
+.contact .thanks{
+    font-size: 2em;
+    line-height: 3em;
+    transition: 5s;
+}
+.contact .info{
+    line-height: 3em;
+}
+.contact i:hover{
+    transition: 0.5s;
+    transform: scale(2);
+    color: #3b5998;
 }

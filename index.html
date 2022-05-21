@@ -22,10 +22,10 @@
 <body>
     <div class="skip-menu">
         <ul>
-            <li><a href="#header">영상</a></li>
-            <li><a href="#header">이야기</a></li>
-            <li><a href="#header">제작물</a></li>
-            <li><a href="#header">마치며</a></li>
+            <li><a href="#slide">시작화면</a></li>
+            <li><a href="#profile01-1">자기소개</a></li>
+            <li><a href="#portfolio">포트폴리오</a></li>
+            <li><a href="#section03">눌러주셔서 감사합니다</a></li>
         </ul>
     </div>
     <div class="Start dis-none fonexo" id="Start">
@@ -33,9 +33,9 @@
             <div class="img-box">
                 <img src="./image/lightbulb.jpg" alt="팝업이미지">
             </div>
-            <h2>해당 페이지의 모든 동작은</h2>
-            <p><span style="color: rgb(112, 103, 30);font-size: 1.2em;">제이쿼리 와 플러그인</span>을 사용하지않고 만들었습니다</p>
-            <p>플러그인,제이쿼리를 사용한 사이트는 <br><a href="">여기</a> 입니다</p>
+            <h2>해당 페이지는</h2>
+            <p><span style="color: rgb(112, 103, 30);font-size: 1.2em;">제이쿼리 와 플러그인</span>을 사용하지않고 직접 만들었습니다</p>
+            <p><br><a  href="#portfolio">포트폴리오 바로가기</a></p>
             <p>저를 성장하게해준 모든분들께 감사합니다.</p>
             <label><input type="checkbox" id="chk01">24시간 열지않음</label>
             <i id="btn-popup" class="fa-solid fa-circle-xmark"></i>
@@ -57,8 +57,9 @@
                         <li><a href="#portfolio">PORTFOLIO</a></li>
                         <li><a href="#section03">THANKS TO VISIT</a></li>
                     </ul>
-                </header>
-            </div>
+                </div>
+            </header>
+            <!-- 슬라이드 -->
             <div class="slidebox" id="slide">
                 <div class="left_btn" onclick="sliprev()"><img src="./image/Next.svg" alt="이전"></div>
                 <div class="slide slide01 active">
@@ -74,24 +75,23 @@
                     </div>
                 </div>
                 <div class="slide slide02">
-                    <a href="href" class="video">
-                        <img src="" alt="동영상이미지" class="videoimg">
+                    <a target="_blank" href="http://igh05001.cafe24.com/guestbook.jsp">
+                        <img src="./image/guestbook.png" alt="방명록 사진" class="videoimg">
                         <div class="sli_tit">
-                            <h1 class="sli_h1 fotape">MY WORKING</h1>
-                            <p class="sli_text fonexo">Check My Work </p>
+                            <h1 class="sli_h1 fonexo">방명록</h1>
+                            <p class="sli_text fonexo">백지부터 프론트엔드,백엔드 연동하여 직접 만든 JSP 방명록</p>
                         </div>
                     </a>
                 </div>
-                <div onclick="Story(04)" class="slide slide03">
+                <div class="slide slide03">
                     <div >
-                        <img src="./image/HardWorking.jpg" alt="과거근무 사진" class="videoimg">
-                        <div class="sli_tit">
-                            <h1 class="sli_h1 fonexo">주 140시간 근무 생존 경험有</h1>
-                            <p class="sli_text fonexo">자세한 내용이 궁금하면 눌러보세요!</p>
-                        </div>
-                        <div class="hardwork popup">
-
-                        </div>
+                        <a target="_blank" href="https://bonggil-tech.github.io/tetris/">
+                            <img src="./image/tetris.PNG" alt="테트리스 사진" class="videoimg">
+                            <div class="sli_tit">
+                                <h1 class="sli_h1 fonexo">테트리스!</h1>
+                                <p class="sli_text fonexo">리액트훅과 타입스크립트를 사용해 만든 테트리스 한번해보실래요?</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div class="right_btn" onclick="slinext()"><img src="./image/Next.svg" alt="다음"></div>
@@ -435,7 +435,7 @@
                     </div>
                 </div>
             </div>
-            <!-- 백엔드 -->
+            <!-- 방명록 -->
             <div class="Story_bg">
                 <div class="Story">
                     <div class="St_wrap">
@@ -450,17 +450,17 @@
                                 </div>
                                 <div class="St_right fonexo">
                                     <h1>방명록</h1>
-                                    <p>뭔가 직접만든 방명록을 포트폴리오에 추가한다면 어떨까 생각해봤습니다.
+                                    <p>직접만든 방명록을 만들고싶었습니다.
                                         <br>누구나 편하게 이용할수있도록 만드는게 목표였습니다.
                                     </p>
                                 </div>
                             </div>
                             <div class="St_content">
                                 <div class="St_left fonexo">
-                                    <h1>교수님감사합니다</h1>
+                                    <h1>MYSQL 연동</h1>
                                     <p>JSP는 검색을통한 정보가 너무 한정적이고 적더라구요..
-                                        <br>그래도 전에 배웠던것들을 떠올려보며
-                                        <br>작업을해갔습니다(사진에서 가린건 DB연동중요정보들입니다.)
+                                        <br>그래서 최대한 전에 정리했던것을 보며
+                                        <br>작업했습니다(사진에서 가린건 DB연동중요정보들입니다.)
                                     </p>
                                 </div>
                                 <div class="St_right fonexo">
@@ -486,9 +486,10 @@
                                 <div class="St_left fonexo">
                                     <h1>만들어진 결과물</h1>
                                     <p>다만들때쯤엔 눈에 다크서클이 깊게 박혀있었습니다.
-                                        <br>호스팅을하고 게시글이 달리는걸지켜봤는데
+                                        <br>호스팅을하고 게시글이 달리는걸 봤는데
                                         <br>너무나도 좋은내용들을 많이 달아주셨습니다
-                                        <br>지친것도 잊어버리고 재미들린것같습니다ㅎㅎ..
+                                        <br>읽으면서 지친것도 잊어버리고 너무 재밌었고 웃음이나왔습니다.
+                                        <br>모든분들께 감사드립니다..
                                     </p>
                                 </div>
                                 <div class="St_right fonexo">
@@ -514,14 +515,14 @@
                                     <a target="_blank" href="https://bonggil-tech.github.io/tetris/"><img src="./image/tetris-1.PNG" alt="테트리스1"></a>
                                 </div>
                                 <div class="St_right fonexo">
-                                    <h1>테트리스!</h1>
-                                    <p>리액트는 정말좋은거같아요
-                                        <br>리액트훅,타입스크립트를 처음쓸때 hooks호출엔
-                                        <br>조건문if()를못쓴다고 친절하게 알려주는거보고
-                                        <br>사람들이왜 리액트리액트 하는지 알수있었습니다.
-                                        <br>정말 간편하고 좋은 라이브러리 같아요
+                                    <h1>타입스크립트</h1>
+                                    <p>리액트가 워낙할수있는게 많다보니
+                                        <br>혹시 이런것도될까? 하고 만들어본 테트리스입니다.
+                                        <br>hook호출 조건문if()를못쓴다고 알려주는거보고..
+                                        <br>세상에 이런 친절한 언어가 있나 했어요
+                                        <br><span style="text-decoration:line-through">패키지 오류생길때는 안친절해 🤬</span>
                                         <br>
-                                        <br>테트로마이노라는 무료에셋을 가져와(왼쪽 사진)
+                                        <br>테트로마이노라는 무료에셋덕에(왼쪽 사진)
                                         <br>블럭모양과 디자인은 완료된 상태에서 작업했습니다.
                                     </p>
                                 </div>
@@ -529,9 +530,10 @@
                             <div class="St_content">
                                 <div class="St_left fonexo">
                                     <h1>플러그인들</h1>
-                                    <p>웹에서는 플러그인을쓰지않고 왠만하면 직접만드는 편인데
-                                        <br>(모든게 컨트롤 가능하다는 느낌은 안정감 있잖아요☺)
-                                        <br>리액트는 간단한 명령어로 설치가능하고 수정도편리해
+                                    <p>공부할때 왠만하면 플러그인 사용을 지양하는데
+                                        <br>
+                                        <br>리액트는 자체가 js 라이브러리니까
+                                        <br>오히려 플러그인을 사용하는게 잘 배우는거라고 생각해
                                         <br>오른쪽 사진들의 플러그인을 사용했습니다.
                                         <br>
                                     </p>
@@ -546,9 +548,9 @@
                                 </div>
                                 <div class="St_right fonexo">
                                     <h1>Let's Play!</h1>
-                                    <p>리액트로 다 짜고나서 html파일에 간단한 자바스크립트를 이용해 완성하였습니다.
+                                    <p>리액트로 다 짜고나서 dist(build)파일에 간단한 자바스크립트를 이용해 완성하였습니다.
                                         <br>
-                                        <br>(이 테트리스는 시간날때마다 계속해서 업데이트 해나갈 거에요!)
+                                        <br>(테트리스는 시간날때마다 계속해서 업데이트 해 나가겠습니다)
                                         <br>
                                         <br>
                                         <br>즐거운시간 되세요!
@@ -564,14 +566,18 @@
             <!-- Contact -->
             <div class="contact fonexo">
                 <div class="container">
-                    <div class="info">
-                        <h1>Name:오민혁</h1>
-                        <p>Phone:O1O-3789-85O4</p>
-                        <p>Email:<a href="#">igh051@naver.com</a></p>
-                    </div>
                     <div class="thanks">
                         <h1>감사합니다!</h1>
-                        <p>Have Nice Day!</p>
+                        <p>오늘하루 건강에좋은 기지개는 피셨나요?</p>
+                        <p>제 포트폴리오 사이트를 방문해주셔서 진심으로 감사합니다.</p>
+                    </div>
+                    <div class="info" style="color: #000;">
+                        <h1><a href="#"onclick="alert('상단으로 이동합니다')">Name: 오민혁</a></h1>
+                        <p>Messenger: 
+                            <a href=""><i class="fa-brands fa-facebook"></i></a>
+                            <a href=""><i class="fa-solid fa-envelope"></i></a>
+                        </p>
+                        <p>Email: <a href="#"> igh051@naver.com</a></p>
                     </div>
                 </div>
             </div>
@@ -579,11 +585,14 @@
         <footer class="footer">
             <div class="container">
                 <a href="./index.html"><svg class="svg" xmlns="http://www.w3.org/2000/svg" width="40" height="40" xml:space="preserve"><text transform="translate(6.981 24.092)" fill="#FFF" font-family="'Roboto-Regular'" font-size="14px">Oh’s</text><circle stroke="#000" stroke-miterlimit="10" cx="20" cy="20" r="19"/><text transform="translate(6.981 24.092)" fill="#D3D2D2" font-family="'Roboto-Regular'" font-size="14">Oh’s</text></svg></a>
+                <p>Seoul ma lee girl Ik nen sa ram E it get Oh's PortFolio</p>
             </div>
         </footer>
     </div>
     <script>
         // 비슷한 동작이더라도 여러 방법을 사용했습니다.
+
+
         // 팝업이벤트
         let popEl = document.getElementById('Start');
         let chk01 = document.getElementById('chk01');
@@ -630,15 +639,15 @@
             // 헤더 배경색 변경
             let header = document.querySelector('.header')
             if(window.scrollY>40){
-                header.style.backgroundColor="rgba(0,0,0,0.4)"
+                header.style.backgroundColor="rgba(0,0,0,0.4)";
             }else if(window.scrollY<40){
-                header.style.backgroundColor="#ffffff"
+                header.style.backgroundColor="#ffffff";
             };
             //프로필 인사말 페이드인아웃 변경
             let profade = document.querySelectorAll('.profade');
             setInterval(function() {
                 if(window.scrollY<500){
-                    // for문으로 문서수가 얼마나 많은지 상관없이 자동호출
+                    // for문으로 모든문서 자동호출
                     // pro1,2스위치 재조정,
                     // 인터벌을 사용하여 페이지가 넘어갔을때 오동작방지
                     for(idx=0;idx<profade.length;idx++){
@@ -653,7 +662,7 @@
             if(window.scrollY>500 && pro1 == true){
                 profade[0].style.opacity="1";
                 profade[0].style.transform = 'translate(0,0)';
-            }
+            };
             if(window.scrollY>700 && pro1 == true){
                 profade[1].style.opacity="1";
                 profade[1].style.transform = "translate(0,0)";
@@ -668,10 +677,10 @@
                 profade[4].style.transform = "translate(0,0)";
                 pro2 = true;},1100);
                 pro1 = false;
-            }
+            };
             //프로필2 소개글 페이드인아웃 변경
             if(window.scrollY<1000 && pro2 == false){
-                //인터벌을 사용하지않고 pro2 불린값을 스위치로 사용하여 오동작방지
+                //인터벌을 사용하지않고 pro2 를 boolean값과 스위치로 사용하여 오동작방지
                 let intTxt = document.querySelectorAll('.int_txt');
                 document.querySelector('.int_img').style.opacity="0";
                 document.querySelector('.int_tit').style.opacity="0.5";
@@ -680,7 +689,7 @@
                     intTxt[idx].style.transform = "translate(-10%,0)";
                     pro2 = true;
                 }
-            }
+            };
             if(window.scrollY>1000 && pro2 == true){
                 //pro2값이 false가 되기전까진 무조건실행
                 let intTxt = document.querySelectorAll('.int_txt');
@@ -705,28 +714,28 @@
             }
             
             // 포트폴리오 인사말
-            let space = document.querySelectorAll('.spa_h')
+            let space = document.querySelectorAll('.spa_h');
             if(window.scrollY>2000){
-                // js 로 css를 이용하여 동작
+                // js 로 css 연계하여 동작
                 space[0].classList.add('spa_active');
                 setTimeout(()=>{
                     space[1].classList.add('spa_active');
                 },900)
-            }
+            };
             console.log(window.scrollY);
         });
         // 슬라이드
-        let slide = document.querySelectorAll('.slide')
-        var slideNum = 0
+        let slide = document.querySelectorAll('.slide') ;
+        var slideNum = 0 ;
         function CheckSl(){
             if(slideNum==0){
                 slide[0].classList.add('active');
             }else if(slideNum==1){
-                slide[1].classList.add('active')
+                slide[1].classList.add('active');
             }else if(slideNum==2){
-                slide[2].classList.add('active')
-            }else{alert('오류 이 메세지는 아마 아무도 못보겠죠 ㅎㅎ');slide.setAttribute()}
-        }
+                slide[2].classList.add('active');
+            }else{alert('오류 이 메세지는 아마 아무도 못보겠죠 ㅎㅎ');slide.setAttribute(Array,'0')}
+        };
         function sliprev(){
             for(idx=0;idx<slide.length;idx++){
                 slide[idx].classList.remove('active')
@@ -735,7 +744,7 @@
                 slideNum -= 1
             }else{slideNum=2}
             CheckSl()
-        }
+        };
         function slinext(){
             for(idx=0;idx<slide.length;idx++){
                 slide[idx].classList.remove('active')
@@ -744,23 +753,23 @@
                 slideNum +=1
             }else{slideNum=0}
             CheckSl()
-        }
+        };
         
         // 포트폴리오 이야기 열기
         function Story(number){
             // 전달받은 함수값에따라 표시할내용 변경
-            let Story = document.querySelectorAll('.Story_bg')
+            let Story = document.querySelectorAll('.Story_bg');
             Story[number].style.display="flex";
-        }
+        };
         // 포트폴리오 이야기 닫기
         function Stclose(self){
             // self 함수명으로 넘어온값의 부모요소를찾아내서 동작
-            let target = self.closest('.Story_bg')
+            let target = self.closest('.Story_bg');
                 target.style.display="none";
-        }
+        };
         function Stclosebg(self){
             self.style.display="none";
-        }
+        };
     </script>
 </body>
 </html>

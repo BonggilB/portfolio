@@ -222,6 +222,8 @@ video{
 }
 .footer .container{
     display: flex;
+    width: 80%;
+    margin: 0 auto;
     color: #aaa;
     font-style: italic;
     justify-content: space-between;
