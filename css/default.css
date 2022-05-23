@@ -8,6 +8,12 @@
     font-style: normal;
 }
 /* 공용워크벤치 */
+body { 
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none
+}
 :root{
     color: rgb(133,133,133);
     font-family: 'Noto Sans KR', sans-serif;
